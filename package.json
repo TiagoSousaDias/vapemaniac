@@ -1,0 +1,33 @@
+{
+  "name": "vapemaniac",
+  "version": "1.0.0",
+  "description": "Os teus vapes ao melhor preço",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiagoSousaDias/vapemaniac.git"
+  },
+  "keywords": [
+    "Vape;",
+    "Venda;",
+    "Best",
+    "Price;",
+    "Barato;"
+  ],
+  "author": "Tiago Sousa Dias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TiagoSousaDias/vapemaniac/issues"
+  },
+  "homepage": "https://github.com/TiagoSousaDias/vapemaniac#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "jwthelper": "0.0.4"
+  }
+}
