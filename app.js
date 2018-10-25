@@ -2,4 +2,12 @@ const express = require('express');
 
 const app = express();
 
-app.listen();
+const port = process.env.PORT || 8080;
+
+app.listen(port,(err)=>{
+  if(err){
+    console.log(err);
+  }else{
+    console.log('Server connected to port:'+port);
+  }
+});
