@@ -12,14 +12,14 @@ if (process.env.NODE_ENV === 'production') {
 }
 app.use(bodyParser.json());
 
-
-//Define all Routes
-app.use('https://vapemaniac.herokuapp.com/',require('./routes/routes').router);
-
 app.get('*',(req,res)=>{
   res.sendFile(path.join(__dirname,'public/index.html'));
 //  if (process.env.NODE_ENV === 'production') res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
+//Define all Routes
+app.use('/',require('./routes/routes').router);
+
+
 app.listen(port,(err)=>{
   if(err){
     console.log(err);
