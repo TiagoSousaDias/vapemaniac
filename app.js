@@ -9,12 +9,13 @@ const port = process.env.PORT || 8080;
 app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.json());
 app.use(cors);
+//Define all Routes
+app.use('/',require('./routes/routes').router);
 
 app.get('*',(req,res)=>{
   res.sendFile(path.join(__dirname,'public/index.html'));
 });
-//Define all Routes
-app.use('/',require('./routes/routes').router);
+
 
 app.listen(port,(err)=>{
   if(err){
