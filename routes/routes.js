@@ -7,7 +7,7 @@ router.get('/',(req,res)=>{
   res.send('HElLO');
 });
 
-  router.use('/mystore',require('./mystore').router);
+router.use('/mystore',require('./mystore').router);
 
 
 
