@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 
 //Define all Routes
 app.use('/',require('./routes/routes').router);
+
 app.get('*',(req,res)=>{
   res.sendFile(path.join(__dirname,'public/index.html'));
 });
