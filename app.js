@@ -17,7 +17,7 @@ app.get('*',(req,res)=>{
 //  if (process.env.NODE_ENV === 'production') res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 //Define all Routes
-app.use('/',require('./routes/routes').router);
+//app.use('/',require('./routes/routes').router);
 
 
 app.listen(port,(err)=>{
