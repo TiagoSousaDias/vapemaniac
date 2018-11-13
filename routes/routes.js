@@ -1,15 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const Products = require('../models/products');
+//const Products = require('../models/products');
 
 router.get('/',(req,res)=>{
   res.send('HElLO');
 });
-router.get('/products',(req,res)=>{
-  Products.getProducts((results)=>{
-    res.json({results});
-  });
-});
-
+  router.use('/products',require('./products').router);
+  router.use('/slicer',require('./slicer').router);
 
 module.exports.router = router;

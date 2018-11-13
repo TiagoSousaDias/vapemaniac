@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\r\n  <a routerLink=\"/\" routerLinkActive=\"active\">Crisis Center</a>\r\n  <a routerLink=\"/products\" routerLinkActive=\"active\">Heroes</a>\r\n</nav>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<nav>\r\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\r\n  <a routerLink=\"/products\" routerLinkActive=\"active\">Produtos</a>\r\n</nav>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -168,7 +168,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-slider></app-slider>\n<app-products></app-products>\n"
+module.exports = "<app-slider [slider]=\"1\"></app-slider>\n<app-products></app-products>\n"
 
 /***/ }),
 
@@ -356,7 +356,7 @@ var ProductsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzbGlkZXIvc2xpZGVyLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ".jumbotron{\r\n  padding: 0px;\r\n  margin: 0;\r\n  max-width: 100%;\r\n  /*max-height: 100%;*/\r\n}\r\n\r\n.jumbotron .container{\r\n  margin:0;\r\n  padding: 0;\r\n    max-width: 100%;\r\n}\r\n\r\n.jumbotron .container img{\r\n  width:100%;\r\n\r\n}\r\n\r\n.row{\r\n  margin:0;\r\n}\r\n\r\n/*.logoSlideshow{\r\n  position: relative;\r\n}*/\r\n\r\n.logoSlideshow .logo{\r\n  position: absolute;\r\n  \r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNsaWRlci9zbGlkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYixVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLHFCQUFxQjtDQUN0Qjs7QUFFRDtFQUNFLFNBQVM7RUFDVCxXQUFXO0lBQ1QsZ0JBQWdCO0NBQ25COztBQUVEO0VBQ0UsV0FBVzs7Q0FFWjs7QUFFRDtFQUNFLFNBQVM7Q0FDVjs7QUFDRDs7R0FFRzs7QUFFSDtFQUNFLG1CQUFtQjs7Q0FFcEIiLCJmaWxlIjoic2xpZGVyL3NsaWRlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmp1bWJvdHJvbntcclxuICBwYWRkaW5nOiAwcHg7XHJcbiAgbWFyZ2luOiAwO1xyXG4gIG1heC13aWR0aDogMTAwJTtcclxuICAvKm1heC1oZWlnaHQ6IDEwMCU7Ki9cclxufVxyXG5cclxuLmp1bWJvdHJvbiAuY29udGFpbmVye1xyXG4gIG1hcmdpbjowO1xyXG4gIHBhZGRpbmc6IDA7XHJcbiAgICBtYXgtd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5qdW1ib3Ryb24gLmNvbnRhaW5lciBpbWd7XHJcbiAgd2lkdGg6MTAwJTtcclxuXHJcbn1cclxuXHJcbi5yb3d7XHJcbiAgbWFyZ2luOjA7XHJcbn1cclxuLyoubG9nb1NsaWRlc2hvd3tcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn0qL1xyXG5cclxuLmxvZ29TbGlkZXNob3cgLmxvZ297XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIFxyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -367,7 +367,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  slider works!\n</p>\n"
+module.exports = "<div class=\"jumbotron\">\r\n  <div class=\"container\">\r\n    <div class=\"row justify-content-center logoSlideshow\">\r\n      <div id=\"slideshow\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"2000\">\r\n        <div class=\"carousel-inner\">\r\n          <div *ngFor=\"let image of images; first as isFirst;\"  class=\"carousel-item\" [class.active]=\"isFirst\" >\r\n            <img class=\"d-block w-100\" src=\"{{image}}\" alt=\"First slide\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"logo\">\r\n        <img src=\"assets/img/lusitaurusw2.png\" alt=\"\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!--\r\n<div class=\"slideshow\">\r\n  <img  *ngFor=\"let image of images; first as isFirst; let select = index \" [class.imgVisible]=\"isFirst\" src=\"{{image}}\" class=\"slideImg\" [ngClass]=\"{'selected': select == selectedIndex}\"/>\r\n</div>\r\n<div class=\"logo\">\r\n  <img src=\"assets/img/lusitaurusw2.png\" alt=\"\">\r\n</div>\r\n-->\r\n"
 
 /***/ }),
 
@@ -382,6 +382,7 @@ module.exports = "<p>\n  slider works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SliderComponent", function() { return SliderComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_image_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/image.service */ "./src/app/services/image.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -392,20 +393,82 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var SliderComponent = /** @class */ (function () {
-    function SliderComponent() {
+    function SliderComponent(imageService) {
+        this.imageService = imageService;
     }
     SliderComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.imageService.getSlicer(this.slider).subscribe(function (images) {
+            _this.images = images.images;
+        }, function (err) {
+            throw err;
+            return false;
+        });
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], SliderComponent.prototype, "slider", void 0);
     SliderComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-slider',
             template: __webpack_require__(/*! ./slider.component.html */ "./src/app/components/slider/slider.component.html"),
             styles: [__webpack_require__(/*! ./slider.component.css */ "./src/app/components/slider/slider.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_image_service__WEBPACK_IMPORTED_MODULE_1__["ImageService"]])
     ], SliderComponent);
     return SliderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/image.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/image.service.ts ***!
+  \*******************************************/
+/*! exports provided: ImageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImageService", function() { return ImageService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ImageService = /** @class */ (function () {
+    function ImageService(http) {
+        this.http = http;
+    }
+    ImageService.prototype.getSlicer = function (slicer) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        this.slicer = slicer;
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('slicer/' + this.slicer, { headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    ImageService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
+    ], ImageService);
+    return ImageService;
 }());
 
 

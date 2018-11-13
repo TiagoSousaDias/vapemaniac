@@ -1,3 +1,25 @@
-<p>
-  slider works!
-</p>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row justify-content-center logoSlideshow">
+      <div id="slideshow" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <div class="carousel-inner">
+          <div *ngFor="let image of images; first as isFirst;"  class="carousel-item" [class.active]="isFirst" >
+            <img class="d-block w-100" src="{{image}}" alt="First slide">
+          </div>
+        </div>
+      </div>
+      <div class="logo">
+        <img src="assets/img/lusitaurusw2.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="slideshow">
+  <img  *ngFor="let image of images; first as isFirst; let select = index " [class.imgVisible]="isFirst" src="{{image}}" class="slideImg" [ngClass]="{'selected': select == selectedIndex}"/>
+</div>
+<div class="logo">
+  <img src="assets/img/lusitaurusw2.png" alt="">
+</div>
+-->
