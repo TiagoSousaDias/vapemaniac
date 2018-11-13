@@ -158,7 +158,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  products works!\r\n</p>\r\n<ul class=\"list-group\">\r\n    <li class=\"list-group-item\" *ngFor=\"let item of products\">{{item.results.categoryName}}</li>\r\n</ul>\r\n"
+module.exports = "<p>\r\n  products works!\r\n</p>\r\n<ul class=\"list-group\">\r\n    <li class=\"list-group-item\" *ngFor=\"let item of products\">{{item.categoryName}}</li>\r\n</ul>\r\n"
 
 /***/ }),
 
