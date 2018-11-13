@@ -158,7 +158,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  products works!\n</p>\n<ul class=\"list-group\">\n    <li class=\"list-group-item\" *ngFor=\"let item of products\">{{item.table_name}}</li>\n</ul>\n"
+module.exports = "<p>\r\n  products works!\r\n</p>\r\n<ul class=\"list-group\">\r\n    <li class=\"list-group-item\" *ngFor=\"let item of products\">{{item.results.categoryName}}</li>\r\n</ul>\r\n"
 
 /***/ }),
 
@@ -322,7 +322,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Projectos\Web\vapemaniac\angular-src\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Projectos\vapemaniac\angular-src\src\main.ts */"./src/main.ts");
 
 
 /***/ })
