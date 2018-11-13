@@ -13,7 +13,7 @@ import { MainpageComponent } from './components/mainpage/mainpage.component';
 
 const appRoutes: Routes = [
     {path:'',component: HomeComponent},
-    {path:'/products2',component: MainpageComponent}
+    {path:'products',component: MainpageComponent}
 ]
 
 @NgModule({
