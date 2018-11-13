@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.productsService.getProducts().subscribe(products=>{
-      this.products = products;
+      this.products = products.results;
     },err =>{
       throw err; return false;
     });

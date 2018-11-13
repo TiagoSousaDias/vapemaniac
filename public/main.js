@@ -192,7 +192,7 @@ var ProductsComponent = /** @class */ (function () {
     ProductsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.productsService.getProducts().subscribe(function (products) {
-            _this.products = products;
+            _this.products = products.results;
         }, function (err) {
             throw err;
             return false;
