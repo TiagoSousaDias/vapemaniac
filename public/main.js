@@ -119,7 +119,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var appRoutes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] },
-    { path: '/products', component: _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"] }
+    { path: '/products2', component: _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
