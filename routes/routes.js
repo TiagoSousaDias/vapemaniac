@@ -6,6 +6,6 @@ router.get('/',(req,res)=>{
   res.send('HElLO');
 });
   router.use('/products',require('./products').router);
-  router.use('/slicer',require('./slicer').router);
+  router.use('/slider',require('./slider').router);
 
 module.exports.router = router;
