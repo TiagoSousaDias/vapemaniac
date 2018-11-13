@@ -245,7 +245,7 @@ var ProductsService = /** @class */ (function () {
     ProductsService.prototype.getProducts = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:8080/products', { headers: headers }).
+        return this.http.get('products', { headers: headers }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ProductsService = __decorate([

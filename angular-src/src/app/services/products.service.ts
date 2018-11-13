@@ -14,7 +14,7 @@ export class ProductsService {
   getProducts(){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:8080/products',{headers:headers}).
+    return this.http.get('products',{headers:headers}).
       pipe(map(res=>res.json()));
   }
 }
