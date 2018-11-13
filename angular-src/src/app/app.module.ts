@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './components/products/products.component';
 import { HomeComponent } from './components/home/home.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { MainpageComponent } from './components/mainpage/mainpage.component';
 
 
 const appRoutes: Routes = [
-    {path:'',component: HomeComponent}
+    {path:'',component: HomeComponent},
+    {path:'/products',component: MainpageComponent}
 ]
 
 @NgModule({
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
     AppComponent,
     ProductsComponent,
     HomeComponent,
-    SliderComponent
+    SliderComponent,
+    MainpageComponent
 
   ],
   imports: [

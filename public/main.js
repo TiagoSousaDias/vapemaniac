@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\r\n"
+module.exports = "<nav>\r\n  <a routerLink=\"/\" routerLinkActive=\"active\">Crisis Center</a>\r\n  <a routerLink=\"/products\" routerLinkActive=\"active\">Heroes</a>\r\n</nav>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -100,6 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_products_products_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/products/products.component */ "./src/app/components/products/products.component.ts");
 /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
 /* harmony import */ var _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/slider/slider.component */ "./src/app/components/slider/slider.component.ts");
+/* harmony import */ var _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/mainpage/mainpage.component */ "./src/app/components/mainpage/mainpage.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -115,8 +116,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var appRoutes = [
-    { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] }
+    { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] },
+    { path: '/products', component: _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -127,7 +130,8 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _components_products_products_component__WEBPACK_IMPORTED_MODULE_6__["ProductsComponent"],
                 _components_home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
-                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_8__["SliderComponent"]
+                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_8__["SliderComponent"],
+                _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -203,6 +207,69 @@ var HomeComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/mainpage/mainpage.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/components/mainpage/mainpage.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWlucGFnZS9tYWlucGFnZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/mainpage/mainpage.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/components/mainpage/mainpage.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-products></app-products>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/mainpage/mainpage.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/mainpage/mainpage.component.ts ***!
+  \***********************************************************/
+/*! exports provided: MainpageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainpageComponent", function() { return MainpageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MainpageComponent = /** @class */ (function () {
+    function MainpageComponent() {
+    }
+    MainpageComponent.prototype.ngOnInit = function () {
+    };
+    MainpageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-mainpage',
+            template: __webpack_require__(/*! ./mainpage.component.html */ "./src/app/components/mainpage/mainpage.component.html"),
+            styles: [__webpack_require__(/*! ./mainpage.component.css */ "./src/app/components/mainpage/mainpage.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MainpageComponent);
+    return MainpageComponent;
 }());
 
 
