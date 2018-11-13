@@ -7,7 +7,7 @@ const pool = new Pool({
 module.exports.getProducts=(callback)=>{
 
    pool.query("SELECT table_name  FROM information_schema.tables  WHERE table_schema='public' AND table_type='BASE TABLE;" , function(err, result) {
-      done();
+      //done();
       if(err) return console.error(err);
       return callback(result.rows);
    });
