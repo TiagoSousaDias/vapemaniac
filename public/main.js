@@ -480,7 +480,7 @@ var ProductsComponent = /** @class */ (function () {
             return false;
         });
         this.category = this.route.params.subscribe(function (params) {
-            _this.category = +params['code']; // (+) converts string 'id' to a number
+            _this.category = params['code']; // (+) converts string 'id' to a number
             console.log(_this.category);
             // In a real app: dispatch action to load the details here.
         });
