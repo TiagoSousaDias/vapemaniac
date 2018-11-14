@@ -473,17 +473,18 @@ var ProductsComponent = /** @class */ (function () {
     }
     ProductsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.productsService.getProducts().subscribe(function (products) {
-            _this.products = products.results;
-        }, function (err) {
-            throw err;
-            return false;
-        });
         this.category = this.route.params.subscribe(function (params) {
             _this.category = params['code']; // (+) converts string 'id' to a number
-            console.log(_this.category);
             // In a real app: dispatch action to load the details here.
         });
+        if (this.category != null) {
+            this.productsService.getProductsByCat(this.category).subscribe(function (products) {
+                _this.products = products.results;
+            }, function (err) {
+                throw err;
+                return false;
+            });
+        }
     };
     ProductsComponent.prototype.ngOnDestroy = function () {
         this.category.unsubscribe();
@@ -706,6 +707,12 @@ var ProductsService = /** @class */ (function () {
     function ProductsService(http) {
         this.http = http;
     }
+    ProductsService.prototype.getProductsByCat = function (category) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('products/' + category, { headers: headers }).
+            pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
     ProductsService.prototype.getProducts = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');

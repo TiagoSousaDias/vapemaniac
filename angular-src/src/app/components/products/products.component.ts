@@ -13,16 +13,19 @@ export class ProductsComponent implements OnInit {
   constructor(private productsService:ProductsService, private route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.productsService.getProducts().subscribe(products=>{
-      this.products = products.results;
-    },err =>{
-      throw err; return false;
-    });
+
     this.category = this.route.params.subscribe(params => {
         this.category = params['code']; // (+) converts string 'id' to a number
-        console.log(this.category);
         // In a real app: dispatch action to load the details here.
      });
+     if(this.category != null){
+       this.productsService.getProductsByCat(this.category).subscribe(products=>{
+         this.products = products.results;
+       },err =>{
+         throw err; return false;
+       });
+     }
+
    }
 
    ngOnDestroy() {

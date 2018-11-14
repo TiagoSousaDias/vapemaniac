@@ -11,6 +11,12 @@ export class ProductsService {
 
   constructor(private http:Http) { }
 
+  getProductsByCat(category){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('products/'+category,{headers:headers}).
+      pipe(map(res=>res.json()));
+  }
   getProducts(){
     let headers = new Headers();
     headers.append('Content-Type','application/json');

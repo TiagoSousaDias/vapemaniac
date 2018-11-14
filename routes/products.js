@@ -7,5 +7,9 @@ router.get('/',(req,res)=>{
     res.json({results});
   });
 });
-
+router.get('/:code',(req,res)=>{
+  Products.getProductsByCat(req.params.code,(resulst)=>{
+      res.json({results});
+  });
+});
 module.exports.router = router;
