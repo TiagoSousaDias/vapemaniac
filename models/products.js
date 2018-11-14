@@ -6,7 +6,7 @@ const pool = new Pool({
 
 module.exports.getProductsByCat=(codeCat,callback)=>{
 
-   pool.query("SELECT product._id, product.productname, product.price FROM public.product inner join (select item_category._id from public.item_category where item_category.categorycode='"+codeCat+"'") as cat  on category_id = cat._id" , function(err, result) {
+   pool.query("SELECT product._id, product.productname, product.price FROM public.product inner join (select item_category._id from public.item_category where item_category.categorycode='"+codeCat+"') as cat  on category_id = cat._id" , function(err, result) {
       //done();
       if(err) return console.error(err);
       return callback(result.rows);
