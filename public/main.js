@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\r\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\r\n  <a *ngFor=\"let item of menuCats\" routerLink=\"/{{item.categoryCode}}\" routerLinkActive=\"active\">{{item.categoryName}}</a>\r\n</nav>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<MainNavbar></MainNavbar>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -56,39 +56,23 @@ module.exports = "<nav>\r\n  <a routerLink=\"/\" routerLinkActive=\"active\">Ini
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_categories_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/categories.service */ "./src/app/services/categories.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(categoriesService) {
-        this.categoriesService = categoriesService;
+    function AppComponent() {
         this.title = 'angular-src';
     }
-    AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.categoriesService.getMenuCats().subscribe(function (cats) {
-            _this.menuCats = cats.results;
-        }, function (err) {
-            throw err;
-            return false;
-        });
-    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        }),
-        __metadata("design:paramtypes", [_services_categories_service__WEBPACK_IMPORTED_MODULE_1__["CategoriesService"]])
+        })
     ], AppComponent);
     return AppComponent;
 }());
@@ -380,7 +364,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  navbar works!\n</p>\n"
+module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" routerLink=\"/{{item.categoryCode}}\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
 
 /***/ }),
 
@@ -395,6 +379,7 @@ module.exports = "<p>\n  navbar works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarComponent", function() { return NavbarComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_categories_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/categories.service */ "./src/app/services/categories.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -405,18 +390,27 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent() {
+    function NavbarComponent(categoriesService) {
+        this.categoriesService = categoriesService;
     }
     NavbarComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.categoriesService.getMenuCats().subscribe(function (cats) {
+            _this.menuCats = cats.results;
+        }, function (err) {
+            throw err;
+            return false;
+        });
     };
     NavbarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-navbar',
+            selector: 'MainNavbar',
             template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/components/navbar/navbar.component.html"),
             styles: [__webpack_require__(/*! ./navbar.component.css */ "./src/app/components/navbar/navbar.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_categories_service__WEBPACK_IMPORTED_MODULE_1__["CategoriesService"]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
