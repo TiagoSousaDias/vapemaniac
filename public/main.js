@@ -123,7 +123,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var appRoutes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] },
-    { path: 'products', component: _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"] },
+    { path: 'products/:code', component: _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"] },
     { path: 'myoffice', component: _components_myoffice_myoffice_component__WEBPACK_IMPORTED_MODULE_10__["MyofficeComponent"] }
 ];
 var AppModule = /** @class */ (function () {
@@ -364,7 +364,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" routerLink=\"/{{item.categoryCode}}\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
+module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" routerLink=\"products/{{item.categoryCode}}/\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
 
 /***/ }),
 

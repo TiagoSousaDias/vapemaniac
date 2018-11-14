@@ -15,7 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 const appRoutes: Routes = [
     {path:'',component: HomeComponent},
-    {path:'products',component: MainpageComponent},
+    {path:'products/:code',component: MainpageComponent},
     {path:'myoffice',component:MyofficeComponent}
 ]
 
