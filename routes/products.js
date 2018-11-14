@@ -8,6 +8,7 @@ router.get('/',(req,res)=>{
   });
 });
 router.get('/:code',(req,res)=>{
+  console.log(req.params.code);
   Products.getProductsByCat(req.params.code,(resulst)=>{
       res.json({results});
   });
