@@ -6,7 +6,7 @@ const pool = new Pool({
 
 module.exports.getMenuCategories=(callback)=>{
 
-   pool.query("SELECT * FROM public.item_category where isMenu = true" , function(err, result) {
+   pool.query("SELECT * FROM public.item_category where ismenu = true" , function(err, result) {
       //done();
       if(err) return console.error(err);
       return callback(result.rows);
