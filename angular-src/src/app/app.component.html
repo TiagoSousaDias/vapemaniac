@@ -1,5 +1,5 @@
 <nav>
   <a routerLink="/" routerLinkActive="active">Inicio</a>
-  <a routerLink="/products" routerLinkActive="active">Produtos</a>
+  <a *ngFor="let item of menuCats" routerLink="/{{item.categoryCode}}" routerLinkActive="active">{{item.categoryName}}</a>
 </nav>
 <router-outlet></router-outlet>
