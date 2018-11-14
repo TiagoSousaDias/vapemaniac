@@ -364,7 +364,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" routerLink=\"products/{{item.categoryCode}}/\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
+module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" [routerLink]=\"['products,{{item.categoryCode}}']\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
 
 /***/ }),
 
@@ -453,6 +453,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsComponent", function() { return ProductsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_products_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/products.service */ "./src/app/services/products.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -464,9 +465,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var ProductsComponent = /** @class */ (function () {
-    function ProductsComponent(productsService) {
+    function ProductsComponent(productsService, route) {
         this.productsService = productsService;
+        this.route = route;
     }
     ProductsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -476,6 +479,14 @@ var ProductsComponent = /** @class */ (function () {
             throw err;
             return false;
         });
+        this.category = this.route.params.subscribe(function (params) {
+            _this.category = +params['id']; // (+) converts string 'id' to a number
+            console.log(params);
+            // In a real app: dispatch action to load the details here.
+        });
+    };
+    ProductsComponent.prototype.ngOnDestroy = function () {
+        this.category.unsubscribe();
     };
     ProductsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -483,7 +494,7 @@ var ProductsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./products.component.html */ "./src/app/components/products/products.component.html"),
             styles: [__webpack_require__(/*! ./products.component.css */ "./src/app/components/products/products.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_products_service__WEBPACK_IMPORTED_MODULE_1__["ProductsService"]])
+        __metadata("design:paramtypes", [_services_products_service__WEBPACK_IMPORTED_MODULE_1__["ProductsService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], ProductsComponent);
     return ProductsComponent;
 }());

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from '../../services/products.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -8,7 +9,8 @@ import {ProductsService} from '../../services/products.service';
 })
 export class ProductsComponent implements OnInit {
   products:any;
-  constructor(private productsService:ProductsService) { }
+  category:any;
+  constructor(private productsService:ProductsService, private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.productsService.getProducts().subscribe(products=>{
@@ -16,6 +18,15 @@ export class ProductsComponent implements OnInit {
     },err =>{
       throw err; return false;
     });
-  }
+    this.category = this.route.params.subscribe(params => {
+        this.category = +params['id']; // (+) converts string 'id' to a number
+        console.log(params);
+        // In a real app: dispatch action to load the details here.
+     });
+   }
+
+   ngOnDestroy() {
+     this.category.unsubscribe();
+   }
 
 }
