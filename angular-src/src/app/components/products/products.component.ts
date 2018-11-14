@@ -19,8 +19,8 @@ export class ProductsComponent implements OnInit {
       throw err; return false;
     });
     this.category = this.route.params.subscribe(params => {
-        this.category = +params['id']; // (+) converts string 'id' to a number
-        console.log(params);
+        this.category = +params['code']; // (+) converts string 'id' to a number
+        console.log(this.category);
         // In a real app: dispatch action to load the details here.
      });
    }
