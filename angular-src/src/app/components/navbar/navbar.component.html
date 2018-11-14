@@ -1,4 +1,4 @@
 <nav>
   <a routerLink="/" routerLinkActive="active">Inicio</a>
-  <a *ngFor="let item of menuCats" routerLink="products/{{item.categoryCode}}/" routerLinkActive="active">{{item.categoryName}}</a>
+  <a *ngFor="let item of menuCats" routerLink="[products,{{item.categoryCode}}]" routerLinkActive="active">{{item.categoryName}}</a>
 </nav>

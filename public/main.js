@@ -364,7 +364,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" routerLink=\"products/{{item.categoryCode}}/\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
+module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" routerLink=\"[products,{{item.categoryCode}}]\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
 
 /***/ }),
 
