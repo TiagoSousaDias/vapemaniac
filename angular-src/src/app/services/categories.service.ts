@@ -13,7 +13,7 @@ export class CategoriesService {
   getMenuCats(){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.get('categories/catMenu',{headers:headers}).
+    return this.http.get('/api/categories/catMenu',{headers:headers}).
       pipe(map(res=>res.json()));
   }
 }

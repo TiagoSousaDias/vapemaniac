@@ -15,7 +15,7 @@ export class ImageService {
       let headers = new Headers();
       this.slicer = slicer;
       headers.append('Content-Type','application/json');
-      return this.http.get('slicer/'+this.slicer,{headers:headers})
+      return this.http.get('/api/slicer/'+this.slicer,{headers:headers})
         .pipe(map(res=>res.json()));
     }
 }
