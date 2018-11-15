@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 //Static Folder
 app.use(express.static(path.join(__dirname,'public')));
 
-app.use(':'+port+'/',require('./routes/routes').router);
+app.use(process.env.ROOT_URL+':'+port+'/',require('./routes/routes').router);
 
 app.get('*',(req,res)=>{
   res.sendFile(path.join(__dirname,'public/index.html'));
