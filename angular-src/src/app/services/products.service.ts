@@ -12,7 +12,6 @@ export class ProductsService {
   constructor(private http:Http) { }
 
   getProductsByCat(category){
-    console.log(category);
     let headers = new Headers();
     headers.append('Content-Type','application/json');
     return this.http.get('api/products/'+ category,{headers:headers}).

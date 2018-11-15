@@ -14,9 +14,8 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.category = this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
         this.category = params['code']; // (+) converts string 'id' to a number
-        // In a real app: dispatch action to load the details here.
      });
      if(this.category != null){
        this.productsService.getProductsByCat(this.category).subscribe(products=>{
