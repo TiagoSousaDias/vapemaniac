@@ -4,6 +4,7 @@ const Categories = require('../models/categories');
 
 router.get('/catMenu',(req,res)=>{
   Categories.getMenuCategories((results)=>{
+    console.log(results);
     res.json({results});
   });
 });
