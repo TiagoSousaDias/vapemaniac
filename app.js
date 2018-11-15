@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 //Static Folder
 app.use(express.static(path.join(__dirname,'public')));
 
-app.use('api/',require('./routes/routes').router);
+app.use('/api/',require('./routes/routes').router);
 
 app.get('*',(req,res)=>{
   res.sendFile(path.join(__dirname,'public/index.html'));
