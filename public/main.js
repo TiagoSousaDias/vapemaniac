@@ -708,6 +708,7 @@ var ProductsService = /** @class */ (function () {
         this.http = http;
     }
     ProductsService.prototype.getProductsByCat = function (category) {
+        console.log(category);
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.get('api/products/' + category, { headers: headers }).
