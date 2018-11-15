@@ -613,7 +613,7 @@ var CategoriesService = /** @class */ (function () {
     CategoriesService.prototype.getMenuCats = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('categories/catMenu', { headers: headers }).
+        return this.http.get('/api/categories/catMenu', { headers: headers }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     CategoriesService = __decorate([
@@ -662,7 +662,7 @@ var ImageService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         this.slicer = slicer;
         headers.append('Content-Type', 'application/json');
-        return this.http.get('slicer/' + this.slicer, { headers: headers })
+        return this.http.get('/api/slicer/' + this.slicer, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ImageService = __decorate([
@@ -710,13 +710,13 @@ var ProductsService = /** @class */ (function () {
     ProductsService.prototype.getProductsByCat = function (category) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('products/' + category, { headers: headers }).
+        return this.http.get('/api/products/' + category, { headers: headers }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ProductsService.prototype.getProducts = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('products', { headers: headers }).
+        return this.http.get('/api/products', { headers: headers }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ProductsService = __decorate([
