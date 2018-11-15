@@ -14,13 +14,13 @@ export class ProductsService {
   getProductsByCat(category){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.get('/api/products/'+category,{headers:headers}).
+    return this.http.get('api/products/'+category,{headers:headers}).
       pipe(map(res=>res.json()));
   }
   getProducts(){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.get('/api/products',{headers:headers}).
+    return this.http.get('api/products',{headers:headers}).
       pipe(map(res=>res.json()));
   }
 }
