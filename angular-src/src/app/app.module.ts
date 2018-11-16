@@ -17,10 +17,10 @@ import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
     {path:'',component: HomeComponent},
-    {path:'products/:code',component: MainpageComponent},
-    {path:'products/:code/:group/',component: MainpageComponent},
-    {path:'products/:code/:group/:id',component: MainpageComponent},
-    {path:'myoffice',component:MyofficeComponent}
+    {path:'/products/:code',component: MainpageComponent},
+    {path:'/products/:code/:group/',component: MainpageComponent},
+    {path:'/products/:code/:group/:id',component: MainpageComponent},
+    {path:'/myoffice',component:MyofficeComponent}
 ]
 
 @NgModule({
@@ -34,7 +34,6 @@ const appRoutes: Routes = [
     NavbarComponent,
     ContactosComponent,
     FooterComponent
-
   ],
   imports: [
     BrowserModule,
