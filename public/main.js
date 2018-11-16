@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<MainNavbar></MainNavbar>\r\n<router-outlet></router-outlet>\r\n<app-footer></app-footer>\r\n"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -181,7 +181,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-slider [slider]=\"1\"></app-slider>\n<app-products></app-products>\n"
+module.exports = "<MainNavbar></MainNavbar>\n<app-slider [slider]=\"1\"></app-slider>\n<app-products></app-products>\n<app-footer></app-footer>\n"
 
 /***/ }),
 
@@ -244,7 +244,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-products></app-products>\n"
+module.exports = "<MainNavbar></MainNavbar>\n<app-products></app-products>\n<app-footer></app-footer>\n"
 
 /***/ }),
 
