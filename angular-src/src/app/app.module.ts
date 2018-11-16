@@ -11,8 +11,8 @@ import { SliderComponent } from './components/slider/slider.component';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { MyofficeComponent } from './components/myoffice/myoffice.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ContactosComponent } from './contactos/contactos.component';
-import { FooterComponent } from './footer/footer.component';
+import { ContactosComponent } from './components/contactos/contactos.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 const appRoutes: Routes = [
