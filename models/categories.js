@@ -5,11 +5,12 @@ const pool = new Pool({
 })
 
 module.exports.getMenuCategories=(callback)=>{
-
+   let cats;
    pool.query("SELECT * FROM public.item_category where ismenu = true" , function(err, result) {
       //done();
       if(err) return console.error(err);
-      return callback(result.rows);
+      cats = result.rows;
+      //return callback(result.rows);
    });
 
 };
