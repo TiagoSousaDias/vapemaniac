@@ -12,4 +12,14 @@ router.get('/:code',(req,res)=>{
       res.json({results});
   });
 });
+router.get('/:code/:group',(req,res)=>{
+  Products.getProductsByCat(req.params.code,(results)=>{
+      res.json({results});
+  });
+});
+router.get('/:code/:group/:id',(req,res)=>{
+  Products.getProductsByCat(req.params.code,(results)=>{
+      res.json({results});
+  });
+});
 module.exports.router = router;
