@@ -27,8 +27,6 @@ export class ProductsComponent implements OnInit {
 
    }
 
-   ngOnDestroy() {
-     this.category.unsubscribe();
-   }
+   
 
 }

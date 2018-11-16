@@ -619,9 +619,6 @@ var ProductsComponent = /** @class */ (function () {
             });
         }
     };
-    ProductsComponent.prototype.ngOnDestroy = function () {
-        this.category.unsubscribe();
-    };
     ProductsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-products',
