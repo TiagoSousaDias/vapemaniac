@@ -9,8 +9,8 @@ module.exports.getMenuCategories=(callback)=>{
    pool.query("SELECT * FROM public.item_category where ismenu = true" , function(err, result) {
       //done();
       if(err) return console.error(err);
-      cats = result.rows;
-      //return callback(result.rows);
+    //  cats = result.rows;
+    return callback(result.rows);
    });
 
 };
