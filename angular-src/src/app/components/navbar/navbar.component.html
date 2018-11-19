@@ -2,3 +2,4 @@
   <a routerLink="/" routerLinkActive="active">Inicio</a>
   <a *ngFor="let item of menuCats" [routerLink]="['products',item.categorycode]" routerLinkActive="active">{{item.categoryName}}</a>
 </nav>
+{{route}}

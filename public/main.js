@@ -498,7 +498,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" [routerLink]=\"['products',item.categorycode]\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
+module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" [routerLink]=\"['products',item.categorycode]\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n{{route}}\n"
 
 /***/ }),
 
@@ -546,7 +546,6 @@ var NavbarComponent = /** @class */ (function () {
     }
     NavbarComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log(this.route);
         this.categoriesService.getMenuCats().subscribe(function (cats) {
             _this.menuCats = cats.results;
         }, function (err) {

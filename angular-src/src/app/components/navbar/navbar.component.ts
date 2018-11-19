@@ -21,7 +21,6 @@ export class NavbarComponent implements OnInit {
     });
   }
   ngOnInit() {
-       console.log(this.route);
     this.categoriesService.getMenuCats().subscribe(cats=>{
       this.menuCats = cats.results;
     },err =>{
