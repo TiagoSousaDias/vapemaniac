@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoriesService} from '../../services/categories.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'MainNavbar',
@@ -8,12 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  isOffice:any;
+  route:any;
   menuCats:any;
-  constructor(private categoriesService:CategoriesService, private router:Router) { }
+  constructor(private categoriesService:CategoriesService, private router:Router, private location:Location) {
+    router.events.subscribe((val) => {
+      if(location.path() != ''){
+        this.route = location.path();
+      } else {
+        this.route = 'Home'
+      }
+    });
+  }
   ngOnInit() {
-       this.isOffice = this.router.url;
-       console.log(this.isOffice);
+       console.log(this.route);
     this.categoriesService.getMenuCats().subscribe(cats=>{
       this.menuCats = cats.results;
     },err =>{

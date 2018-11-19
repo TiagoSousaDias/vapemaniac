@@ -515,6 +515,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_categories_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/categories.service */ "./src/app/services/categories.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -527,15 +528,25 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent(categoriesService, router) {
+    function NavbarComponent(categoriesService, router, location) {
+        var _this = this;
         this.categoriesService = categoriesService;
         this.router = router;
+        this.location = location;
+        router.events.subscribe(function (val) {
+            if (location.path() != '') {
+                _this.route = location.path();
+            }
+            else {
+                _this.route = 'Home';
+            }
+        });
     }
     NavbarComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.isOffice = this.router.url;
-        console.log(this.isOffice);
+        console.log(this.route);
         this.categoriesService.getMenuCats().subscribe(function (cats) {
             _this.menuCats = cats.results;
         }, function (err) {
@@ -549,7 +560,7 @@ var NavbarComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/components/navbar/navbar.component.html"),
             styles: [__webpack_require__(/*! ./navbar.component.css */ "./src/app/components/navbar/navbar.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_categories_service__WEBPACK_IMPORTED_MODULE_1__["CategoriesService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        __metadata("design:paramtypes", [_services_categories_service__WEBPACK_IMPORTED_MODULE_1__["CategoriesService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
