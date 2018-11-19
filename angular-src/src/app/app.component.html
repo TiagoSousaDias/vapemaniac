@@ -1,2 +1,10 @@
-<MainNavbar></MainNavbar>
-<router-outlet></router-outlet>
+<div *ngIf="!route;main else office"></div>
+<ng-template #main>
+  <MainNavbar></MainNavbar>
+  <router-outlet></router-outlet>
+</ng-template>
+<ng-template #office>
+
+  <MainNavbar></MainNavbar>
+  <router-outlet></router-outlet>
+</ng-template>

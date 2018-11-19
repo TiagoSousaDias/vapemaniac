@@ -498,7 +498,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" [routerLink]=\"['products',item.categorycode]\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n{{route}}\n"
+module.exports = "<nav *ngIf=\"route\">\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" [routerLink]=\"['products',item.categorycode]\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
 
 /***/ }),
 
@@ -537,10 +537,10 @@ var NavbarComponent = /** @class */ (function () {
         this.location = location;
         router.events.subscribe(function (val) {
             if (location.path() != '') {
-                _this.route = location.path();
+                _this.route = true;
             }
             else {
-                _this.route = 'Home';
+                _this.route = false;
             }
         });
     }

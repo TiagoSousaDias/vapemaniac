@@ -13,10 +13,10 @@ export class NavbarComponent implements OnInit {
   menuCats:any;
   constructor(private categoriesService:CategoriesService, private router:Router, private location:Location) {
     router.events.subscribe((val) => {
-      if(location.path() != ''){
-        this.route = location.path();
+      if(location.path().includes('myoffice') ){
+        this.route = true;
       } else {
-        this.route = 'Home'
+        this.route = false;
       }
     });
   }

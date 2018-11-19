@@ -1,5 +1,5 @@
 module.exports = {
   database: {
-    host:'postgres://ltqhsuvlwfzylt:ebaeacba766bb3c1d243c2e85ef8854f074181c73b64c004e4b5a058b06c8004@ec2-79-125-8-105.eu-west-1.compute.amazonaws.com:5432/d2kg1fe21rjlb8?ssl=true' || process.env.DATABASE_URL
+    host:'postgres://127.0.0.1:58957/?key=82af8823-a5ac-415e-87e7-166ee1a4aed0' || process.env.DATABASE_URL
   }
 }
