@@ -1,6 +1,6 @@
 const config = require('../config/configs');
 const  { Pool, Client } = require('pg');
-const pool = new Pool({
+const pool = new Pool({connectionString:config.database.host
 })
 
 module.exports.getProductsByCat=(codeCat,callback)=>{
