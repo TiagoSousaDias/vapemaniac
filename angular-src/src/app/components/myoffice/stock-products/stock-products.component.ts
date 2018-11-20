@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-stock-products',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockProductsComponent implements OnInit {
   title = "Produtos";
-  constructor() { }
+  routeParams: any;
+  constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
+       this.routeParams = this.activatedRoute.snapshot.queryParams;
+       console.log(this.routeParams.id);
   }
 
 }

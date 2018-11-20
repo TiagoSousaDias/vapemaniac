@@ -24,8 +24,7 @@ const appRoutes: Routes = [
       {path:'myoffice',component:MyofficeComponent, children:[
         {path:'products',component:StockProductsComponent, children:[
           {path:'add',component:StockProductsComponent},
-          {path:'edit/:id',component:StockProductsComponent},
-          {path:'add',component:StockProductsComponent}
+          {path:'edit/:id',component:StockProductsComponent}
         ]},
         {path:'categories',component:CategoriesComponent, children:[
           {path:'edit/:id',component:CategoriesComponent},
