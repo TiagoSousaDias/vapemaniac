@@ -1,0 +1,13 @@
+.dropdown{
+  position: relative;
+   display: inline-block;
+   vertical-align: middle;
+}
+.dropdown-menu{
+  width: 100%;
+  background-color:#66798C;
+}
+
+.navOffice .nav-item{
+  background-color: #465360;
+}

@@ -1,24 +1,17 @@
-
-<nav *ngIf="!route; else elseBlock">
+<div *ngIf="!office;then main else elseBlock"></div>
+<ng-template #main>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarColor02">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link"  routerLink="/" routerLinkActive="active">Inicio<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">About</a>
+                    <li *ngFor="let item of menuCats"  class="nav-item">
+                      <a class="nav-link" [routerLink]="['products',item.categorycode]" routerLinkActive="active">{{item.categoryName}}</a>
                     </li>
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
@@ -27,32 +20,22 @@
                   </form>
                 </div>
               </nav>
-  <a routerLink="/" routerLinkActive="active">Inicio</a>
-  <a *ngFor="let item of menuCats" [routerLink]="['products',item.categorycode]" routerLinkActive="active">{{item.categoryName}}</a>
-</nav>
+</ng-template>
 <ng-template #elseBlock>
-  <div class="col-lg-4">
-    <ul class="nav nav-pills flex-column">
+    <ul class="nav nav-pills flex-column navOffice">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link active" routerLink="/myoffice" routerLinkActive="active">Inicio</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="dropdown" aria-expanded="false">Stock</a>
+         <ul class="dropdown-menu dropdown-menu-left" role="menu">
+            <li role="presentation"><a role="menuitem" class="dropdown-item" routerLink="/myoffice/products">Produtos</a></li>
+            <li role="presentation"><a role="menuitem" class="dropdown-item" routerLink="/myoffice/categories">Categorias</a></li>
+            <li role="presentation"><a role="menuitem" class="dropdown-item" routerLink="/myoffice/attrs">Atributos</a></li>
+        </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link" href="myoffice/customers">Clientes</a>
       </li>
     </ul>
-  </div>
-
 </ng-template>

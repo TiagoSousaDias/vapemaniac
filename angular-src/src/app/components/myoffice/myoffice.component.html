@@ -1,3 +1,11 @@
-<p>
-  myoffice works!
-</p>
+
+<div *ngIf="route;then dash;else main"></div>
+<ng-template #dash>
+  <div class="container-fluid">
+    <h1>{{title}}</h1>
+
+  </div>
+</ng-template>
+<ng-template #main>
+  <router-outlet></router-outlet>
+</ng-template>

@@ -1,10 +1,15 @@
-<div *ngIf="!route;main else office"></div>
+<div *ngIf="!route;then main else office"></div>
 <ng-template #main>
-  <MainNavbar></MainNavbar>
+  <MainNavbar [office]=false ></MainNavbar>
   <router-outlet></router-outlet>
 </ng-template>
 <ng-template #office>
-
-  <MainNavbar></MainNavbar>
-  <router-outlet></router-outlet>
+  <div class="row  no-gutters officeMenu">
+    <div class="col-lg-2 navOffice">
+      <MainNavbar [office]=true></MainNavbar>
+    </div>
+    <div class="col-lg-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </ng-template>

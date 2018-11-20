@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\r\n\r\n\r\n.officeMenu{\r\n  height:100%;\r\n  min-height:100%;\r\n}\r\n\r\n.navOffice{\r\n  background: #4E5D6C;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBR0E7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0NBQ2pCOztBQUVEO0VBQ0Usb0JBQW9CO0NBQ3JCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuXHJcblxyXG4ub2ZmaWNlTWVudXtcclxuICBoZWlnaHQ6MTAwJTtcclxuICBtaW4taGVpZ2h0OjEwMCU7XHJcbn1cclxuXHJcbi5uYXZPZmZpY2V7XHJcbiAgYmFja2dyb3VuZDogIzRFNUQ2QztcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<MainNavbar></MainNavbar>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<div *ngIf=\"!route;then main else office\"></div>\r\n<ng-template #main>\r\n  <MainNavbar [office]=false ></MainNavbar>\r\n  <router-outlet></router-outlet>\r\n</ng-template>\r\n<ng-template #office>\r\n  <div class=\"row  no-gutters officeMenu\">\r\n    <div class=\"col-lg-2 navOffice\">\r\n      <MainNavbar [office]=true></MainNavbar>\r\n    </div>\r\n    <div class=\"col-lg-10\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</ng-template>\r\n"
 
 /***/ }),
 
@@ -56,23 +56,42 @@ module.exports = "<MainNavbar></MainNavbar>\r\n<router-outlet></router-outlet>\r
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(router, location) {
+        var _this = this;
+        this.router = router;
+        this.location = location;
         this.title = 'angular-src';
+        router.events.subscribe(function (val) {
+            if (location.path().includes('myoffice')) {
+                _this.route = true;
+            }
+            else {
+                _this.route = false;
+            }
+        });
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -105,6 +124,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
 /* harmony import */ var _components_contactos_contactos_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/contactos/contactos.component */ "./src/app/components/contactos/contactos.component.ts");
 /* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/footer/footer.component */ "./src/app/components/footer/footer.component.ts");
+/* harmony import */ var _components_notfound_notfound_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/notfound/notfound.component */ "./src/app/components/notfound/notfound.component.ts");
+/* harmony import */ var _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/myoffice/stock-products/stock-products.component */ "./src/app/components/myoffice/stock-products/stock-products.component.ts");
+/* harmony import */ var _components_myoffice_categories_categories_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/myoffice/categories/categories.component */ "./src/app/components/myoffice/categories/categories.component.ts");
+/* harmony import */ var _components_myoffice_attrs_attrs_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/myoffice/attrs/attrs.component */ "./src/app/components/myoffice/attrs/attrs.component.ts");
+/* harmony import */ var _components_myoffice_customers_customers_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/myoffice/customers/customers.component */ "./src/app/components/myoffice/customers/customers.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -125,12 +149,34 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
+
 var appRoutes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] },
+    { path: 'myoffice', component: _components_myoffice_myoffice_component__WEBPACK_IMPORTED_MODULE_10__["MyofficeComponent"], children: [
+            { path: 'products', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"], children: [
+                    { path: 'add', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"] },
+                    { path: 'edit/:id', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"] },
+                    { path: 'add', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"] }
+                ] },
+            { path: 'categories', component: _components_myoffice_categories_categories_component__WEBPACK_IMPORTED_MODULE_16__["CategoriesComponent"], children: [
+                    { path: 'edit/:id', component: _components_myoffice_categories_categories_component__WEBPACK_IMPORTED_MODULE_16__["CategoriesComponent"] },
+                    { path: 'add', component: _components_myoffice_categories_categories_component__WEBPACK_IMPORTED_MODULE_16__["CategoriesComponent"] }
+                ] },
+            { path: 'attrs', component: _components_myoffice_attrs_attrs_component__WEBPACK_IMPORTED_MODULE_17__["AttrsComponent"] },
+            { path: 'customers', component: _components_myoffice_customers_customers_component__WEBPACK_IMPORTED_MODULE_18__["CustomersComponent"], children: [
+                    { path: 'edit/:id', component: _components_myoffice_customers_customers_component__WEBPACK_IMPORTED_MODULE_18__["CustomersComponent"] },
+                    { path: 'add', component: _components_myoffice_customers_customers_component__WEBPACK_IMPORTED_MODULE_18__["CustomersComponent"] }
+                ] },
+        ] },
     { path: 'products/:code', component: _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"] },
-    { path: 'products/:code/:group/', component: _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"] },
-    { path: 'products/:code/:group/:id', component: _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"] },
-    { path: 'myoffice', component: _components_myoffice_myoffice_component__WEBPACK_IMPORTED_MODULE_10__["MyofficeComponent"] }
+    { path: 'products/:code/:id/', component: _components_mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_9__["MainpageComponent"] },
+    { path: 'contacts', component: _components_contactos_contactos_component__WEBPACK_IMPORTED_MODULE_12__["ContactosComponent"] },
+    { path: '404', component: _components_notfound_notfound_component__WEBPACK_IMPORTED_MODULE_14__["NotfoundComponent"] },
+    { path: '**', component: _components_notfound_notfound_component__WEBPACK_IMPORTED_MODULE_14__["NotfoundComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -146,7 +192,12 @@ var AppModule = /** @class */ (function () {
                 _components_myoffice_myoffice_component__WEBPACK_IMPORTED_MODULE_10__["MyofficeComponent"],
                 _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_11__["NavbarComponent"],
                 _components_contactos_contactos_component__WEBPACK_IMPORTED_MODULE_12__["ContactosComponent"],
-                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_13__["FooterComponent"]
+                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_13__["FooterComponent"],
+                _components_notfound_notfound_component__WEBPACK_IMPORTED_MODULE_14__["NotfoundComponent"],
+                _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"],
+                _components_myoffice_categories_categories_component__WEBPACK_IMPORTED_MODULE_16__["CategoriesComponent"],
+                _components_myoffice_attrs_attrs_component__WEBPACK_IMPORTED_MODULE_17__["AttrsComponent"],
+                _components_myoffice_customers_customers_component__WEBPACK_IMPORTED_MODULE_18__["CustomersComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -417,6 +468,195 @@ var MainpageComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/myoffice/attrs/attrs.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/components/myoffice/attrs/attrs.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbXlvZmZpY2UvYXR0cnMvYXR0cnMuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/attrs/attrs.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/components/myoffice/attrs/attrs.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  attrs works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/attrs/attrs.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/components/myoffice/attrs/attrs.component.ts ***!
+  \**************************************************************/
+/*! exports provided: AttrsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AttrsComponent", function() { return AttrsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AttrsComponent = /** @class */ (function () {
+    function AttrsComponent() {
+    }
+    AttrsComponent.prototype.ngOnInit = function () {
+    };
+    AttrsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-attrs',
+            template: __webpack_require__(/*! ./attrs.component.html */ "./src/app/components/myoffice/attrs/attrs.component.html"),
+            styles: [__webpack_require__(/*! ./attrs.component.css */ "./src/app/components/myoffice/attrs/attrs.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AttrsComponent);
+    return AttrsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/categories/categories.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/myoffice/categories/categories.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbXlvZmZpY2UvY2F0ZWdvcmllcy9jYXRlZ29yaWVzLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/categories/categories.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/components/myoffice/categories/categories.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  categories works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/categories/categories.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/components/myoffice/categories/categories.component.ts ***!
+  \************************************************************************/
+/*! exports provided: CategoriesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriesComponent", function() { return CategoriesComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CategoriesComponent = /** @class */ (function () {
+    function CategoriesComponent() {
+    }
+    CategoriesComponent.prototype.ngOnInit = function () {
+    };
+    CategoriesComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-categories',
+            template: __webpack_require__(/*! ./categories.component.html */ "./src/app/components/myoffice/categories/categories.component.html"),
+            styles: [__webpack_require__(/*! ./categories.component.css */ "./src/app/components/myoffice/categories/categories.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CategoriesComponent);
+    return CategoriesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/customers/customers.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/myoffice/customers/customers.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbXlvZmZpY2UvY3VzdG9tZXJzL2N1c3RvbWVycy5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/customers/customers.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/components/myoffice/customers/customers.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  customers works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/customers/customers.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/components/myoffice/customers/customers.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: CustomersComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomersComponent", function() { return CustomersComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CustomersComponent = /** @class */ (function () {
+    function CustomersComponent() {
+    }
+    CustomersComponent.prototype.ngOnInit = function () {
+    };
+    CustomersComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-customers',
+            template: __webpack_require__(/*! ./customers.component.html */ "./src/app/components/myoffice/customers/customers.component.html"),
+            styles: [__webpack_require__(/*! ./customers.component.css */ "./src/app/components/myoffice/customers/customers.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CustomersComponent);
+    return CustomersComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/myoffice/myoffice.component.css":
 /*!************************************************************!*\
   !*** ./src/app/components/myoffice/myoffice.component.css ***!
@@ -435,7 +675,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  myoffice works!\n</p>\n"
+module.exports = "\r\n<div *ngIf=\"route;then dash;else main\"></div>\r\n<ng-template #dash>\r\n  <div class=\"container-fluid\">\r\n    <h1>{{title}}</h1>\r\n\r\n  </div>\r\n</ng-template>\r\n<ng-template #main>\r\n  <router-outlet></router-outlet>\r\n</ng-template>\r\n"
 
 /***/ }),
 
@@ -450,6 +690,8 @@ module.exports = "<p>\n  myoffice works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyofficeComponent", function() { return MyofficeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -460,8 +702,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var MyofficeComponent = /** @class */ (function () {
-    function MyofficeComponent() {
+    function MyofficeComponent(router, location) {
+        var _this = this;
+        this.router = router;
+        this.location = location;
+        this.title = "Dashboard";
+        //  this.route = location.path().toString();
+        router.events.subscribe(function (val) {
+            _this.route = location.path() == "/myoffice";
+        });
     }
     MyofficeComponent.prototype.ngOnInit = function () {
     };
@@ -471,9 +723,73 @@ var MyofficeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./myoffice.component.html */ "./src/app/components/myoffice/myoffice.component.html"),
             styles: [__webpack_require__(/*! ./myoffice.component.css */ "./src/app/components/myoffice/myoffice.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"]])
     ], MyofficeComponent);
     return MyofficeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/stock-products/stock-products.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/components/myoffice/stock-products/stock-products.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbXlvZmZpY2Uvc3RvY2stcHJvZHVjdHMvc3RvY2stcHJvZHVjdHMuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/stock-products/stock-products.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/components/myoffice/stock-products/stock-products.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  stock-products works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/myoffice/stock-products/stock-products.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/components/myoffice/stock-products/stock-products.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: StockProductsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StockProductsComponent", function() { return StockProductsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var StockProductsComponent = /** @class */ (function () {
+    function StockProductsComponent() {
+        this.title = "Produtos";
+    }
+    StockProductsComponent.prototype.ngOnInit = function () {
+    };
+    StockProductsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-stock-products',
+            template: __webpack_require__(/*! ./stock-products.component.html */ "./src/app/components/myoffice/stock-products/stock-products.component.html"),
+            styles: [__webpack_require__(/*! ./stock-products.component.css */ "./src/app/components/myoffice/stock-products/stock-products.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], StockProductsComponent);
+    return StockProductsComponent;
 }());
 
 
@@ -487,7 +803,7 @@ var MyofficeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ".dropdown{\r\n  position: relative;\r\n   display: inline-block;\r\n   vertical-align: middle;\r\n}\r\n.dropdown-menu{\r\n  width: 100%;\r\n  background-color:#66798C;\r\n}\r\n.navOffice .nav-item{\r\n  background-color: #465360;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQkFBbUI7R0FDbEIsc0JBQXNCO0dBQ3RCLHVCQUF1QjtDQUN6QjtBQUNEO0VBQ0UsWUFBWTtFQUNaLHlCQUF5QjtDQUMxQjtBQUVEO0VBQ0UsMEJBQTBCO0NBQzNCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZHJvcGRvd257XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuLmRyb3Bkb3duLW1lbnV7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjojNjY3OThDO1xyXG59XHJcblxyXG4ubmF2T2ZmaWNlIC5uYXYtaXRlbXtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDY1MzYwO1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -498,7 +814,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav *ngIf=\"route\">\n  <a routerLink=\"/\" routerLinkActive=\"active\">Inicio</a>\n  <a *ngFor=\"let item of menuCats\" [routerLink]=\"['products',item.categorycode]\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n</nav>\n"
+module.exports = "<div *ngIf=\"!office;then main else elseBlock\"></div>\n<ng-template #main>\n  <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n                <a class=\"navbar-brand\" href=\"#\">Navbar</a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"collapse navbar-collapse\" id=\"navbarColor02\">\n                  <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item active\">\n                      <a class=\"nav-link\"  routerLink=\"/\" routerLinkActive=\"active\">Inicio<span class=\"sr-only\">(current)</span></a>\n                    </li>\n                    <li *ngFor=\"let item of menuCats\"  class=\"nav-item\">\n                      <a class=\"nav-link\" [routerLink]=\"['products',item.categorycode]\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n                    </li>\n                  </ul>\n                  <form class=\"form-inline my-2 my-lg-0\">\n                    <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n                    <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\n                  </form>\n                </div>\n              </nav>\n</ng-template>\n<ng-template #elseBlock>\n    <ul class=\"nav nav-pills flex-column navOffice\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link active\" routerLink=\"/myoffice\" routerLinkActive=\"active\">Inicio</a>\n      </li>\n      <li class=\"nav-item dropdown\">\n        <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"dropdown\" aria-expanded=\"false\">Stock</a>\n         <ul class=\"dropdown-menu dropdown-menu-left\" role=\"menu\">\n            <li role=\"presentation\"><a role=\"menuitem\" class=\"dropdown-item\" routerLink=\"/myoffice/products\">Produtos</a></li>\n            <li role=\"presentation\"><a role=\"menuitem\" class=\"dropdown-item\" routerLink=\"/myoffice/categories\">Categorias</a></li>\n            <li role=\"presentation\"><a role=\"menuitem\" class=\"dropdown-item\" routerLink=\"/myoffice/attrs\">Atributos</a></li>\n        </ul>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"myoffice/customers\">Clientes</a>\n      </li>\n    </ul>\n</ng-template>\n"
 
 /***/ }),
 
@@ -514,8 +830,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarComponent", function() { return NavbarComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_categories_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/categories.service */ "./src/app/services/categories.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -527,41 +841,98 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
-
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent(categoriesService, router, location) {
-        var _this = this;
+    function NavbarComponent(categoriesService) {
         this.categoriesService = categoriesService;
-        this.router = router;
-        this.location = location;
-        router.events.subscribe(function (val) {
-            if (location.path() != '') {
-                _this.route = true;
-            }
-            else {
-                _this.route = false;
-            }
-        });
+        this.office = false;
     }
     NavbarComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.categoriesService.getMenuCats().subscribe(function (cats) {
-            _this.menuCats = cats.results;
-        }, function (err) {
-            throw err;
-            return false;
-        });
+        if (!this.office) {
+            this.categoriesService.getMenuCats().subscribe(function (cats) {
+                _this.menuCats = cats.results;
+            }, function (err) {
+                throw err;
+                return false;
+            });
+        }
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], NavbarComponent.prototype, "office", void 0);
     NavbarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'MainNavbar',
             template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/components/navbar/navbar.component.html"),
             styles: [__webpack_require__(/*! ./navbar.component.css */ "./src/app/components/navbar/navbar.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_categories_service__WEBPACK_IMPORTED_MODULE_1__["CategoriesService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
+        __metadata("design:paramtypes", [_services_categories_service__WEBPACK_IMPORTED_MODULE_1__["CategoriesService"]])
     ], NavbarComponent);
     return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/notfound/notfound.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/components/notfound/notfound.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbm90Zm91bmQvbm90Zm91bmQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/notfound/notfound.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/components/notfound/notfound.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  notfound works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/notfound/notfound.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/notfound/notfound.component.ts ***!
+  \***********************************************************/
+/*! exports provided: NotfoundComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotfoundComponent", function() { return NotfoundComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NotfoundComponent = /** @class */ (function () {
+    function NotfoundComponent() {
+    }
+    NotfoundComponent.prototype.ngOnInit = function () {
+    };
+    NotfoundComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-notfound',
+            template: __webpack_require__(/*! ./notfound.component.html */ "./src/app/components/notfound/notfound.component.html"),
+            styles: [__webpack_require__(/*! ./notfound.component.css */ "./src/app/components/notfound/notfound.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], NotfoundComponent);
+    return NotfoundComponent;
 }());
 
 
@@ -586,7 +957,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  products works!\r\n</p>\r\n<ul class=\"list-group\">\r\n    <li class=\"list-group-item\" *ngFor=\"let item of products\">{{item.categoryName}}</li>\r\n</ul>\r\n"
+module.exports = "<div *ngFor=\"let item of products\" class=\"card mb-3\">\r\n  <h3 class=\"card-header\">{{item.categoryName}}</h3>\r\n  <div class=\"card-body\">\r\n    <h5 class=\"card-title\">Special title treatment</h5>\r\n    <h6 class=\"card-subtitle text-muted\">Support card subtitle</h6>\r\n  </div>\r\n  <img style=\"height: 200px; width: 100%; display: block;\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\" alt=\"Card image\">\r\n  <div class=\"card-body\">\r\n    <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n  </div>\r\n  <ul class=\"list-group list-group-flush\">\r\n    <li class=\"list-group-item\">Cras justo odio</li>\r\n    <li class=\"list-group-item\">Dapibus ac facilisis in</li>\r\n    <li class=\"list-group-item\">Vestibulum at eros</li>\r\n  </ul>\r\n  <div class=\"card-body\">\r\n    <a href=\"#\" class=\"card-link\">Card link</a>\r\n    <a href=\"#\" class=\"card-link\">Another link</a>\r\n  </div>\r\n  <div class=\"card-footer text-muted\">\r\n    2 days ago\r\n  </div>\r\n</div>\r\n<div class=\"card\">\r\n  <div class=\"card-body\">\r\n    <h4 class=\"card-title\">Card title</h4>\r\n    <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>\r\n    <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n    <a href=\"#\" class=\"card-link\">Card link</a>\r\n    <a href=\"#\" class=\"card-link\">Another link</a>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -758,7 +1129,7 @@ var CategoriesService = /** @class */ (function () {
     CategoriesService.prototype.getMenuCats = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('api/categories/catMenu', { headers: headers }).
+        return this.http.get('/api/categories/catMenu', { headers: headers }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     CategoriesService = __decorate([
