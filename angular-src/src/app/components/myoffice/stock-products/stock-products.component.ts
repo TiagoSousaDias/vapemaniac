@@ -39,6 +39,7 @@ export class StockProductsComponent implements OnInit {
           break;
         case 'add':
             this.categories = this.categoriesService.getCats();
+            console.log(this.categories);
           break;
         default:
           break;
