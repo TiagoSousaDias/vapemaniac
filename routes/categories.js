@@ -8,7 +8,7 @@ router.get('/catMenu',(req,res)=>{
   });
 });
 
-router.get('',(req,res)=>{
+router.get('/',(req,res)=>{
   Categories.getCategories((results)=>{
     res.json({results});
   });
