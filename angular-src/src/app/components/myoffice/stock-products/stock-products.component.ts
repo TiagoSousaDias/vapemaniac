@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ProductsService} from '../../../services/products.service';
+import { CategoriesService} from '../../../services/categories.service';
 
 @Component({
   selector: 'app-stock-products',
@@ -8,12 +10,38 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StockProductsComponent implements OnInit {
   title = "Produtos";
-  routeParams: any;
-  constructor(private activatedRoute:ActivatedRoute) { }
-
-  ngOnInit() {
-       this.routeParams = this.activatedRoute.snapshot.queryParams;
-       console.log(this.routeParams.id);
+  id: any;
+  action:any;
+  listProducts: any;
+  categories:any;
+  constructor(private activatedRoute: ActivatedRoute,
+    private productsService:ProductsService,
+    private categoriesService:CategoriesService,
+    private router:Router) {
+   try{
+    this.action = this.activatedRoute.firstChild.snapshot.params['action'] || '';
+    this.id = this.activatedRoute.firstChild.snapshot.params['id']  || null;
+    }catch(err){
+      this.action = '';
+      this.id = '';
+    }
   }
 
+  ngOnInit() {
+    switch(this.action){
+        case 'edit':
+          if(this.id != null){
+              this.listProducts = this.productsService.getProducts();
+                console.log(this.listProducts);
+          }else{
+            this.router.navigate(['myoffice/products']);
+          }
+          break;
+        case 'add':
+            this.categories = this.categoriesService.getCats();
+          break;
+        default:
+          break;
+    }
+  }
 }

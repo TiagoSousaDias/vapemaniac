@@ -158,9 +158,8 @@ var appRoutes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"] },
     { path: 'myoffice', component: _components_myoffice_myoffice_component__WEBPACK_IMPORTED_MODULE_10__["MyofficeComponent"], children: [
             { path: 'products', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"], children: [
-                    { path: 'add', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"] },
-                    { path: 'edit/:id', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"] },
-                    { path: 'add', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"] }
+                    { path: ':action', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"] },
+                    { path: ':action/:id', component: _components_myoffice_stock_products_stock_products_component__WEBPACK_IMPORTED_MODULE_15__["StockProductsComponent"] }
                 ] },
             { path: 'categories', component: _components_myoffice_categories_categories_component__WEBPACK_IMPORTED_MODULE_16__["CategoriesComponent"], children: [
                     { path: 'edit/:id', component: _components_myoffice_categories_categories_component__WEBPACK_IMPORTED_MODULE_16__["CategoriesComponent"] },
@@ -765,6 +764,9 @@ module.exports = "<p>\n  stock-products works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StockProductsComponent", function() { return StockProductsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_products_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/products.service */ "./src/app/services/products.service.ts");
+/* harmony import */ var _services_categories_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/categories.service */ "./src/app/services/categories.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -775,11 +777,42 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var StockProductsComponent = /** @class */ (function () {
-    function StockProductsComponent() {
+    function StockProductsComponent(activatedRoute, productsService, categoriesService, router) {
+        this.activatedRoute = activatedRoute;
+        this.productsService = productsService;
+        this.categoriesService = categoriesService;
+        this.router = router;
         this.title = "Produtos";
+        try {
+            this.action = this.activatedRoute.firstChild.snapshot.params['action'] || '';
+            this.id = this.activatedRoute.firstChild.snapshot.params['id'] || null;
+        }
+        catch (err) {
+            this.action = '';
+            this.id = '';
+        }
     }
     StockProductsComponent.prototype.ngOnInit = function () {
+        switch (this.action) {
+            case 'edit':
+                if (this.id != null) {
+                    this.listProducts = this.productsService.getProducts();
+                    console.log(this.listProducts);
+                }
+                else {
+                    this.router.navigate(['myoffice/products']);
+                }
+                break;
+            case 'add':
+                this.categories = this.categoriesService.getCats();
+                break;
+            default:
+                break;
+        }
     };
     StockProductsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -787,7 +820,10 @@ var StockProductsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./stock-products.component.html */ "./src/app/components/myoffice/stock-products/stock-products.component.html"),
             styles: [__webpack_require__(/*! ./stock-products.component.css */ "./src/app/components/myoffice/stock-products/stock-products.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _services_products_service__WEBPACK_IMPORTED_MODULE_2__["ProductsService"],
+            _services_categories_service__WEBPACK_IMPORTED_MODULE_3__["CategoriesService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], StockProductsComponent);
     return StockProductsComponent;
 }());
@@ -994,7 +1030,7 @@ var ProductsComponent = /** @class */ (function () {
     ProductsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
-            _this.category = params['code']; // (+) converts string 'id' to a number
+            _this.category = params['code'];
         });
         if (this.category != null) {
             this.productsService.getProductsByCat(this.category).subscribe(function (products) {
@@ -1130,6 +1166,12 @@ var CategoriesService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.get('/api/categories/catMenu', { headers: headers }).
+            pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    CategoriesService.prototype.getCats = function () {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('/api/categories', { headers: headers }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     CategoriesService = __decorate([

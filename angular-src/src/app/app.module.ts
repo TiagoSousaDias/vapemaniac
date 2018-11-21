@@ -23,8 +23,8 @@ const appRoutes: Routes = [
     {path:'',component: HomeComponent},
       {path:'myoffice',component:MyofficeComponent, children:[
         {path:'products',component:StockProductsComponent, children:[
-          {path:'add',component:StockProductsComponent},
-          {path:'edit/:id',component:StockProductsComponent}
+          {path:':action',component:StockProductsComponent},
+          {path:':action/:id',component:StockProductsComponent}
         ]},
         {path:'categories',component:CategoriesComponent, children:[
           {path:'edit/:id',component:CategoriesComponent},

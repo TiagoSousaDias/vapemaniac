@@ -16,4 +16,10 @@ export class CategoriesService {
     return this.http.get('/api/categories/catMenu',{headers:headers}).
       pipe(map(res=>res.json()));
   }
+  getCats(){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('/api/categories',{headers:headers}).
+      pipe(map(res=>res.json()));
+  }
 }
