@@ -32,14 +32,22 @@ export class StockProductsComponent implements OnInit {
     switch(this.action){
         case 'edit':
           if(this.id != null){
-              this.listProducts = this.productsService.getProducts();
+            this.productsService.getProducts().subscribe(products=>{
+                this.listProducts = products.results;
+              },err =>{
+                throw err; return false;
+              });
                 console.log(this.listProducts);
           }else{
             this.router.navigate(['myoffice/products']);
           }
           break;
         case 'add':
-            this.categories = this.categoriesService.getCats();
+              this.categoriesService.getCats().subscribe(categories=>{
+              this.categories = categories.results;
+            },err =>{
+              throw err; return false;
+            });;
             console.log(this.categories);
           break;
         default:

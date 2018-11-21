@@ -797,11 +797,17 @@ var StockProductsComponent = /** @class */ (function () {
         }
     }
     StockProductsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         console.log(this.action);
         switch (this.action) {
             case 'edit':
                 if (this.id != null) {
-                    this.listProducts = this.productsService.getProducts();
+                    this.productsService.getProducts().subscribe(function (products) {
+                        _this.listProducts = products.results;
+                    }, function (err) {
+                        throw err;
+                        return false;
+                    });
                     console.log(this.listProducts);
                 }
                 else {
@@ -809,7 +815,13 @@ var StockProductsComponent = /** @class */ (function () {
                 }
                 break;
             case 'add':
-                this.categories = this.categoriesService.getCats();
+                this.categoriesService.getCats().subscribe(function (categories) {
+                    _this.categories = categories.results;
+                }, function (err) {
+                    throw err;
+                    return false;
+                });
+                ;
                 console.log(this.categories);
                 break;
             default:
