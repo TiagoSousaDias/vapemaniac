@@ -28,6 +28,7 @@ export class StockProductsComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.action);
     switch(this.action){
         case 'edit':
           if(this.id != null){

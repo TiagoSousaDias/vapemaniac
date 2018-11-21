@@ -797,6 +797,7 @@ var StockProductsComponent = /** @class */ (function () {
         }
     }
     StockProductsComponent.prototype.ngOnInit = function () {
+        console.log(this.action);
         switch (this.action) {
             case 'edit':
                 if (this.id != null) {
