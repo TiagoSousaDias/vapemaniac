@@ -14,7 +14,7 @@ export class StockProductsComponent implements OnInit {
   action:any;
   listProducts: any;
   listCats:any;
-  
+
   constructor(private activatedRoute: ActivatedRoute,
     private productsService:ProductsService,
     private categoriesService:CategoriesService,
@@ -26,9 +26,6 @@ export class StockProductsComponent implements OnInit {
       this.action = '';
       this.id = '';
     }
-  }
-
-  ngOnInit() {
     console.log(this.action);
     switch(this.action){
         case 'edit':
@@ -55,5 +52,9 @@ export class StockProductsComponent implements OnInit {
           break;
     }
       console.log(this.listCats);
+  }
+
+  ngOnInit() {
+
   }
 }

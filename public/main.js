@@ -782,6 +782,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var StockProductsComponent = /** @class */ (function () {
     function StockProductsComponent(activatedRoute, productsService, categoriesService, router) {
+        var _this = this;
         this.activatedRoute = activatedRoute;
         this.productsService = productsService;
         this.categoriesService = categoriesService;
@@ -795,9 +796,6 @@ var StockProductsComponent = /** @class */ (function () {
             this.action = '';
             this.id = '';
         }
-    }
-    StockProductsComponent.prototype.ngOnInit = function () {
-        var _this = this;
         console.log(this.action);
         switch (this.action) {
             case 'edit':
@@ -826,6 +824,8 @@ var StockProductsComponent = /** @class */ (function () {
                 break;
         }
         console.log(this.listCats);
+    }
+    StockProductsComponent.prototype.ngOnInit = function () {
     };
     StockProductsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
