@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
 import { ProductsService} from '../../../services/products.service';
 import { CategoriesService} from '../../../services/categories.service';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-stock-products',
@@ -26,6 +26,9 @@ export class StockProductsComponent implements OnInit {
       this.action = '';
       this.id = '';
     }
+  }
+
+  ngOnInit() {
     console.log(this.action);
     switch(this.action){
         case 'edit':
@@ -43,6 +46,7 @@ export class StockProductsComponent implements OnInit {
         case 'add':
               this.categoriesService.getCats().subscribe(cats=>{
               this.listCats = cats.results;
+                console.log(this.listCats);
             },err =>{
               throw err; return false;
             });
@@ -51,10 +55,6 @@ export class StockProductsComponent implements OnInit {
         default:
           break;
     }
-      console.log(this.listCats);
-  }
-
-  ngOnInit() {
 
   }
 }

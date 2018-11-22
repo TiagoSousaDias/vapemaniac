@@ -764,9 +764,9 @@ module.exports = "<p>\n  stock-products works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StockProductsComponent", function() { return StockProductsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_products_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/products.service */ "./src/app/services/products.service.ts");
-/* harmony import */ var _services_categories_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/categories.service */ "./src/app/services/categories.service.ts");
+/* harmony import */ var _services_products_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/products.service */ "./src/app/services/products.service.ts");
+/* harmony import */ var _services_categories_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/categories.service */ "./src/app/services/categories.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -782,7 +782,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var StockProductsComponent = /** @class */ (function () {
     function StockProductsComponent(activatedRoute, productsService, categoriesService, router) {
-        var _this = this;
         this.activatedRoute = activatedRoute;
         this.productsService = productsService;
         this.categoriesService = categoriesService;
@@ -796,6 +795,9 @@ var StockProductsComponent = /** @class */ (function () {
             this.action = '';
             this.id = '';
         }
+    }
+    StockProductsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         console.log(this.action);
         switch (this.action) {
             case 'edit':
@@ -815,6 +817,7 @@ var StockProductsComponent = /** @class */ (function () {
             case 'add':
                 this.categoriesService.getCats().subscribe(function (cats) {
                     _this.listCats = cats.results;
+                    console.log(_this.listCats);
                 }, function (err) {
                     throw err;
                     return false;
@@ -823,9 +826,6 @@ var StockProductsComponent = /** @class */ (function () {
             default:
                 break;
         }
-        console.log(this.listCats);
-    }
-    StockProductsComponent.prototype.ngOnInit = function () {
     };
     StockProductsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -833,10 +833,10 @@ var StockProductsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./stock-products.component.html */ "./src/app/components/myoffice/stock-products/stock-products.component.html"),
             styles: [__webpack_require__(/*! ./stock-products.component.css */ "./src/app/components/myoffice/stock-products/stock-products.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            _services_products_service__WEBPACK_IMPORTED_MODULE_2__["ProductsService"],
-            _services_categories_service__WEBPACK_IMPORTED_MODULE_3__["CategoriesService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _services_products_service__WEBPACK_IMPORTED_MODULE_1__["ProductsService"],
+            _services_categories_service__WEBPACK_IMPORTED_MODULE_2__["CategoriesService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], StockProductsComponent);
     return StockProductsComponent;
 }());
