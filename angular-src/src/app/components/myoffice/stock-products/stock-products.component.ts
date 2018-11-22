@@ -43,8 +43,8 @@ export class StockProductsComponent implements OnInit {
           }
           break;
         case 'add':
-              this.categoriesService.getCats().subscribe(categories=>{
-              this.categories = categories.results;
+              this.categoriesService.getCats().subscribe(cats=>{
+              this.categories = cats.results;
             },err =>{
               throw err; return false;
             });;

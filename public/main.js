@@ -815,8 +815,8 @@ var StockProductsComponent = /** @class */ (function () {
                 }
                 break;
             case 'add':
-                this.categoriesService.getCats().subscribe(function (categories) {
-                    _this.categories = categories.results;
+                this.categoriesService.getCats().subscribe(function (cats) {
+                    _this.categories = cats.results;
                 }, function (err) {
                     throw err;
                     return false;
