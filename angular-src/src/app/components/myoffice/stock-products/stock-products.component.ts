@@ -14,6 +14,7 @@ export class StockProductsComponent implements OnInit {
   action:any;
   listProducts: any;
   listCats:any;
+  
   constructor(private activatedRoute: ActivatedRoute,
     private productsService:ProductsService,
     private categoriesService:CategoriesService,
