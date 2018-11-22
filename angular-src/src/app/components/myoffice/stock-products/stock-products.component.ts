@@ -48,10 +48,11 @@ export class StockProductsComponent implements OnInit {
             },err =>{
               throw err; return false;
             });
-            console.log(this.listCats);
+
           break;
         default:
           break;
     }
+      console.log(this.listCats);
   }
 }

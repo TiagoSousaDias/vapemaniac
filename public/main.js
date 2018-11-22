@@ -821,11 +821,11 @@ var StockProductsComponent = /** @class */ (function () {
                     throw err;
                     return false;
                 });
-                console.log(this.listCats);
                 break;
             default:
                 break;
         }
+        console.log(this.listCats);
     };
     StockProductsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
