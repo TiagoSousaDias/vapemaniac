@@ -816,13 +816,12 @@ var StockProductsComponent = /** @class */ (function () {
                 break;
             case 'add':
                 this.categoriesService.getCats().subscribe(function (cats) {
-                    _this.categories = cats.results;
+                    _this.listCats = cats.results;
                 }, function (err) {
                     throw err;
                     return false;
                 });
-                ;
-                console.log(this.categories);
+                console.log(this.listCats);
                 break;
             default:
                 break;

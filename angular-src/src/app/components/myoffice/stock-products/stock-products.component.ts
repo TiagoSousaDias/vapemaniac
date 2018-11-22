@@ -13,7 +13,7 @@ export class StockProductsComponent implements OnInit {
   id: any;
   action:any;
   listProducts: any;
-  categories:any;
+  listCats:any;
   constructor(private activatedRoute: ActivatedRoute,
     private productsService:ProductsService,
     private categoriesService:CategoriesService,
@@ -44,11 +44,11 @@ export class StockProductsComponent implements OnInit {
           break;
         case 'add':
               this.categoriesService.getCats().subscribe(cats=>{
-              this.categories = cats.results;
+              this.listCats = cats.results;
             },err =>{
               throw err; return false;
-            });;
-            console.log(this.categories);
+            });
+            console.log(this.listCats);
           break;
         default:
           break;
