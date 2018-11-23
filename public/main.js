@@ -1297,7 +1297,7 @@ var ProductsService = /** @class */ (function () {
     ProductsService.prototype.getAttributes = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('api/attributes', { headers: headers }).
+        return this.http.get('api/products/attributes', { headers: headers }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ProductsService = __decorate([
