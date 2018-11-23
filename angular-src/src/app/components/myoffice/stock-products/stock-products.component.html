@@ -63,7 +63,7 @@
       <div class="form-group row">
         <div class="col-sm-5">
           <label for="attrVal" >Tipo</label>
-          <select class="custom-select">
+          <select ng-model="searchiD" class="custom-select">
             <option selected>Selecionar</option>
             <option *ngFor="let item of listAttrs" value="{{item._id}}">{{item.attributo}}</option>
           </select>
@@ -72,6 +72,7 @@
           <label for="attrVal">Valor</label>
           <select disabled class="custom-select">
             <option selected>Selecionar</option>
+            <option  ng-repeat="ats in listAttrs | filter: ats.searchiD" value=""></option>
           </select>
         </div>
         <div class="col-sm-2 align-self-end">
