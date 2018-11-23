@@ -4,10 +4,14 @@
 <ng-template [ngIf]="action =='edit'"><h1>edit</h1>
 </ng-template>
 <ng-template [ngIf]="action =='add'">
-  <div class="row">
-    <h1>{{title}}</h1>
+  <div class="row-fluid">
+    <div class="col-md-12">
+        <h1>{{title}}</h1>
+    </div>
   </div>
-  <div class="row">
+  <div class="row-fluid">
+    <div class="col-md-12">
+
     <form>
   <fieldset>
     <legend>Detalhes</legend>
@@ -82,5 +86,6 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
 </form>
+  </div>
   </div>
 </ng-template>
