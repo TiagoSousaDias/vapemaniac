@@ -23,4 +23,10 @@ export class ProductsService {
     return this.http.get('api/products',{headers:headers}).
       pipe(map(res=>res.json()));
   }
+  getAttributes(){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('api/attributes',{headers:headers}).
+      pipe(map(res=>res.json()));
+  }
 }

@@ -738,7 +738,7 @@ var MyofficeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbXlvZmZpY2Uvc3RvY2stcHJvZHVjdHMvc3RvY2stcHJvZHVjdHMuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "h1{\r\n  margin-top:28px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9teW9mZmljZS9zdG9jay1wcm9kdWN0cy9zdG9jay1wcm9kdWN0cy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQWdCO0NBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9teW9mZmljZS9zdG9jay1wcm9kdWN0cy9zdG9jay1wcm9kdWN0cy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDF7XHJcbiAgbWFyZ2luLXRvcDoyOHB4O1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -749,7 +749,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<ng-template [ngIf]=\"!action\"><h1>Lista</h1>\n</ng-template>\n<ng-template [ngIf]=\"action =='edit'\"><h1>edit</h1>\n</ng-template>\n<ng-template [ngIf]=\"action =='add'\">\n  <div class=\"row-fluid\">\n    <div class=\"col-md-12\">\n        <h1>{{title}}</h1>\n    </div>\n  </div>\n  <div class=\"row-fluid\">\n    <div class=\"col-md-12\">\n\n    <form>\n  <fieldset>\n    <legend>Detalhes</legend>\n    <div class=\"form-group row\">\n      <label for=\"staticEmail\" class=\"col-sm-2 col-form-label\">Email</label>\n      <div class=\"col-sm-10\">\n        <input type=\"text\" readonly=\"\" class=\"form-control-plaintext\" id=\"staticEmail\" value=\"email@example.com\">\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleSelect1\">Example select</label>\n      <select class=\"form-control\" id=\"exampleSelect1\">\n        <option *ngFor=\"let item of listCats\">item.categoryName</option>\n\n      </select>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleSelect2\">Example multiple select</label>\n      <select multiple=\"\" class=\"form-control\" id=\"exampleSelect2\">\n        <option>1</option>\n        <option>2</option>\n        <option>3</option>\n        <option>4</option>\n        <option>5</option>\n      </select>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleTextarea\">Example textarea</label>\n      <textarea class=\"form-control\" id=\"exampleTextarea\" rows=\"3\"></textarea>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleInputFile\">File input</label>\n      <input type=\"file\" class=\"form-control-file\" id=\"exampleInputFile\" aria-describedby=\"fileHelp\">\n      <small id=\"fileHelp\" class=\"form-text text-muted\">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>\n    </div>\n    <fieldset class=\"form-group\">\n      <legend>Radio buttons</legend>\n      <div class=\"form-check\">\n        <label class=\"form-check-label\">\n          <input type=\"radio\" class=\"form-check-input\" name=\"optionsRadios\" id=\"optionsRadios1\" value=\"option1\" checked=\"\">\n          Option one is this and that—be sure to include why it's great\n        </label>\n      </div>\n      <div class=\"form-check\">\n      <label class=\"form-check-label\">\n          <input type=\"radio\" class=\"form-check-input\" name=\"optionsRadios\" id=\"optionsRadios2\" value=\"option2\">\n          Option two can be something else and selecting it will deselect option one\n        </label>\n      </div>\n      <div class=\"form-check disabled\">\n      <label class=\"form-check-label\">\n          <input type=\"radio\" class=\"form-check-input\" name=\"optionsRadios\" id=\"optionsRadios3\" value=\"option3\" disabled=\"\">\n          Option three is disabled\n        </label>\n      </div>\n    </fieldset>\n    <fieldset class=\"form-group\">\n      <legend>Checkboxes</legend>\n      <div class=\"form-check\">\n        <label class=\"form-check-label\">\n          <input class=\"form-check-input\" type=\"checkbox\" value=\"\" checked=\"\">\n          Option one is this and that—be sure to include why it's great\n        </label>\n      </div>\n      <div class=\"form-check disabled\">\n        <label class=\"form-check-label\">\n          <input class=\"form-check-input\" type=\"checkbox\" value=\"\" disabled=\"\">\n          Option two is disabled\n        </label>\n      </div>\n    </fieldset>\n    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n  </fieldset>\n</form>\n  </div>\n  </div>\n</ng-template>\n"
+module.exports = "\n<ng-template [ngIf]=\"!action\"><h1>Lista</h1>\n</ng-template>\n<ng-template [ngIf]=\"action =='edit'\"><h1>edit</h1>\n</ng-template>\n<ng-template [ngIf]=\"action =='add'\">\n  <div class=\"row-fluid offset-md-1\">\n    <div class=\"col-md-12 \">\n        <h1>{{title}}</h1>\n    </div>\n  </div>\n  <div class=\"row-fluid offset-md-1\">\n    <div class=\"col-md-8\">\n    <form>\n  <fieldset>\n    <legend>Detalhes</legend>\n    <div class=\"form-group\">\n      <label for=\"nome\">Nome</label>\n      <input type=\"text\" class=\"form-control\" id=\"nome\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleSelect1\">Categoria</label>\n      <select class=\"form-control\" id=\"exampleSelect1\">\n        <option *ngFor=\"let item of listCats\" value=\"{{item.categorycode}}\">{{item.categoryName}}</option>\n      </select>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"desc\">Descrição</label>\n      <textarea class=\"form-control\" id=\"desc\" rows=\"3\"></textarea>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"stock\">Stock</label>\n        <input class=\"form-control\" type=\"number\" value=\"50\" id=\"stock\">\n    </div>\n    <div class=\"form-group\">\n      <label class=\"control-label\">Preço</label>\n      <div class=\"form-group\">\n        <div class=\"input-group mb-3\">\n          <div class=\"input-group-prepend\">\n            <span class=\"input-group-text\">€</span>\n          </div>\n          <input type=\"text\" class=\"form-control\" aria-label=\"Amount (to the nearest dollar)\">\n          <div class=\"input-group-append\">\n            <span class=\"input-group-text\"></span>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <div class=\"input-group mb-3\">\n        <div class=\"custom-file\">\n          <input type=\"file\" class=\"custom-file-input\" id=\"inputGroupFile02\">\n          <label class=\"custom-file-label\" for=\"inputGroupFile02\">Choose file</label>\n        </div>\n        <div class=\"input-group-append\">\n          <span class=\"input-group-text\" id=\"\">Upload</span>\n        </div>\n      </div>\n    </div>\n    </fieldset>\n    <fieldset class=\"form-group\">\n      <legend>Adicionar Atributos</legend>\n      <div class=\"form-group row\">\n        <div class=\"col-sm-5\">\n          <label for=\"attrVal\" >Tipo</label>\n          <select class=\"custom-select\">\n            <option selected>Selecionar</option>\n            <option *ngFor=\"let item of listAttrs\" value=\"{{item._id}}\">{{item.attributo}}</option>\n          </select>\n        </div>\n        <div class=\"col-sm-5\">\n          <label for=\"attrVal\">Valor</label>\n          <select disabled class=\"custom-select\">\n            <option selected>Selecionar</option>\n          </select>\n        </div>\n        <div class=\"col-sm-2 align-self-end\">\n          <button type=\"button\" class=\"btn btn-info\">+</button>\n        </div>\n      </div>\n    </fieldset>\n</form>\n  </div>\n  </div>\n</ng-template>\n"
 
 /***/ }),
 
@@ -798,7 +798,6 @@ var StockProductsComponent = /** @class */ (function () {
     }
     StockProductsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log(this.action);
         switch (this.action) {
             case 'edit':
                 if (this.id != null) {
@@ -817,7 +816,12 @@ var StockProductsComponent = /** @class */ (function () {
             case 'add':
                 this.categoriesService.getCats().subscribe(function (cats) {
                     _this.listCats = cats.results;
-                    console.log(_this.listCats);
+                }, function (err) {
+                    throw err;
+                    return false;
+                });
+                this.productsService.getAttributes().subscribe(function (products) {
+                    _this.listAttrs = products.results;
                 }, function (err) {
                     throw err;
                     return false;
@@ -1288,6 +1292,12 @@ var ProductsService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.get('api/products', { headers: headers }).
+            pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    ProductsService.prototype.getAttributes = function () {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('api/attributes', { headers: headers }).
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     ProductsService = __decorate([

@@ -22,3 +22,12 @@ module.exports.getProductsByCatAndGroup=(codeCat,groupCode,callback)=>{
    });
 
 };
+module.exports.getAttributes=(callback)=>{
+
+   pool.query("SELECT * FROM attributes" , function(err, result) {
+      //done();
+      if(err) return console.error(err);
+      return callback(result.rows);
+   });
+
+};

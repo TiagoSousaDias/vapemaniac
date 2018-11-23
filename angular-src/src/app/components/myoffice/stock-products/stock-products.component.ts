@@ -14,7 +14,7 @@ export class StockProductsComponent implements OnInit {
   action:any;
   listProducts: any;
   listCats:any;
-
+  listAttrs:any;
   constructor(private activatedRoute: ActivatedRoute,
     private productsService:ProductsService,
     private categoriesService:CategoriesService,
@@ -29,7 +29,6 @@ export class StockProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.action);
     switch(this.action){
         case 'edit':
           if(this.id != null){
@@ -44,13 +43,16 @@ export class StockProductsComponent implements OnInit {
           }
           break;
         case 'add':
-              this.categoriesService.getCats().subscribe(cats=>{
+            this.categoriesService.getCats().subscribe(cats=>{
               this.listCats = cats.results;
-                console.log(this.listCats);
             },err =>{
               throw err; return false;
             });
-
+            this.productsService.getAttributes().subscribe(products=>{
+                this.listAttrs = products.results;
+              },err =>{
+                throw err; return false;
+              });
           break;
         default:
           break;
