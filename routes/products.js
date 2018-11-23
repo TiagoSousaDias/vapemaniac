@@ -7,13 +7,14 @@ router.get('/',(req,res)=>{
     res.json({results});
   });
 });
-router.get('/:code',(req,res)=>{
-  Products.getProductsByCat(req.params.code,(results)=>{
+
+router.get('/attributes',(req,res)=>{
+  Products.getAttributes((results)=>{
       res.json({results});
   });
 });
-router.get('/attributes',(req,res)=>{
-  Products.getAttributes((results)=>{
+router.get('/:code',(req,res)=>{
+  Products.getProductsByCat(req.params.code,(results)=>{
       res.json({results});
   });
 });
