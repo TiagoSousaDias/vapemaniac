@@ -67,7 +67,6 @@ export class StockProductsComponent implements OnInit {
   //Eventos
   addAttrToProd(type,val, area){
     //alert(type + ' - ' + val);
-
     let div = this.renderer.createElement('div');
     let badge = this.renderer.createElement('span');
     this.renderer.addClass(badge,'badge badge-primary')
