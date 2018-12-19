@@ -70,7 +70,7 @@ export class StockProductsComponent implements OnInit {
     let div = this.renderer.createElement('div');
     let badge = this.renderer.createElement('span');
     this.renderer.addClass(badge,'badge badge-primary')
-    this.renderer.createText(value);
+    this.renderer.createText(val);
     this.renderer.addClass(div,'attrItem');
     this.renderer.appendChild(div, badge);
     this.renderer.appendChild(this.attrArea.nativeElement, div);

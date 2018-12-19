@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [[module.i, "\r\n@import \"https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/superhero/bootstrap.min.css\";\n/* You can add global styles to this file, and also import other style files */\n/*@import \"~bootstrap/dist/css/bootstrap.css\";\r\n@import \"~font-awesome/css/font-awesome.css\";*/\nhtml ,body{\r\n  margin:0;\r\n  padding: 0;\r\n  height: 100vh;\r\n  min-height: 100vh%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFHQSwwRkFBMEY7QUFIMUYsK0VBQStFO0FBQy9FOytDQUMrQztBQUUvQztFQUNFLFNBQVM7RUFDVCxXQUFXO0VBQ1gsY0FBYztFQUNkLG1CQUFtQjtDQUNwQiIsImZpbGUiOiJzcmMvc3R5bGVzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFlvdSBjYW4gYWRkIGdsb2JhbCBzdHlsZXMgdG8gdGhpcyBmaWxlLCBhbmQgYWxzbyBpbXBvcnQgb3RoZXIgc3R5bGUgZmlsZXMgKi9cclxuLypAaW1wb3J0IFwifmJvb3RzdHJhcC9kaXN0L2Nzcy9ib290c3RyYXAuY3NzXCI7XHJcbkBpbXBvcnQgXCJ+Zm9udC1hd2Vzb21lL2Nzcy9mb250LWF3ZXNvbWUuY3NzXCI7Ki9cclxuQGltcG9ydCBcImh0dHBzOi8vc3RhY2twYXRoLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN3YXRjaC80LjEuMy9zdXBlcmhlcm8vYm9vdHN0cmFwLm1pbi5jc3NcIjtcclxuaHRtbCAsYm9keXtcclxuICBtYXJnaW46MDtcclxuICBwYWRkaW5nOiAwO1xyXG4gIGhlaWdodDogMTAwdmg7XHJcbiAgbWluLWhlaWdodDogMTAwdmglO1xyXG59XHJcbiJdfQ== */", '', '']]
+module.exports = [[module.i, "\n@import \"https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/superhero/bootstrap.min.css\";\n/* You can add global styles to this file, and also import other style files */\n/*@import \"~bootstrap/dist/css/bootstrap.css\";\n@import \"~font-awesome/css/font-awesome.css\";*/\nhtml ,body{\n  margin:0;\n  padding: 0;\n  height: 100vh;\n  min-height: 100vh%;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFHQSwwRkFBMEY7QUFIMUYsK0VBQStFO0FBQy9FOytDQUMrQztBQUUvQztFQUNFLFNBQVM7RUFDVCxXQUFXO0VBQ1gsY0FBYztFQUNkLG1CQUFtQjtDQUNwQiIsImZpbGUiOiJzcmMvc3R5bGVzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFlvdSBjYW4gYWRkIGdsb2JhbCBzdHlsZXMgdG8gdGhpcyBmaWxlLCBhbmQgYWxzbyBpbXBvcnQgb3RoZXIgc3R5bGUgZmlsZXMgKi9cbi8qQGltcG9ydCBcIn5ib290c3RyYXAvZGlzdC9jc3MvYm9vdHN0cmFwLmNzc1wiO1xuQGltcG9ydCBcIn5mb250LWF3ZXNvbWUvY3NzL2ZvbnQtYXdlc29tZS5jc3NcIjsqL1xuQGltcG9ydCBcImh0dHBzOi8vc3RhY2twYXRoLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN3YXRjaC80LjEuMy9zdXBlcmhlcm8vYm9vdHN0cmFwLm1pbi5jc3NcIjtcbmh0bWwgLGJvZHl7XG4gIG1hcmdpbjowO1xuICBwYWRkaW5nOiAwO1xuICBoZWlnaHQ6IDEwMHZoO1xuICBtaW4taGVpZ2h0OiAxMDB2aCU7XG59XG4iXX0= */", '', '']]
 
 /***/ }),
 
@@ -13523,9 +13523,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Projectos\Web\vapemaniac\angular-src\src\styles.css */"./src/styles.css");
-__webpack_require__(/*! D:\Projectos\Web\vapemaniac\angular-src\node_modules\jquery\dist\jquery.min.js */"./node_modules/jquery/dist/jquery.min.js");
-module.exports = __webpack_require__(/*! D:\Projectos\Web\vapemaniac\angular-src\node_modules\bootstrap\dist\js\bootstrap.min.js */"./node_modules/bootstrap/dist/js/bootstrap.min.js");
+__webpack_require__(/*! D:\Projectos\vapemaniac\angular-src\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! D:\Projectos\vapemaniac\angular-src\node_modules\jquery\dist\jquery.min.js */"./node_modules/jquery/dist/jquery.min.js");
+module.exports = __webpack_require__(/*! D:\Projectos\vapemaniac\angular-src\node_modules\bootstrap\dist\js\bootstrap.min.js */"./node_modules/bootstrap/dist/js/bootstrap.min.js");
 
 
 /***/ })
