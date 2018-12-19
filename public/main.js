@@ -233,7 +233,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  contactos works!\n</p>\n"
+module.exports = "<p>\r\n  contactos works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -296,7 +296,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  footer works!\n</p>\n"
+module.exports = "<p>\r\n  footer works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -359,7 +359,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-slider [slider]=\"1\"></app-slider>\n<app-products></app-products>\n<app-footer></app-footer>\n"
+module.exports = "<app-slider [slider]=\"1\"></app-slider>\r\n<app-products></app-products>\r\n<app-footer></app-footer>\r\n"
 
 /***/ }),
 
@@ -422,7 +422,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-products></app-products>\n<app-footer></app-footer>\n"
+module.exports = "<app-products></app-products>\r\n<app-footer></app-footer>\r\n"
 
 /***/ }),
 
@@ -485,7 +485,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  attrs works!\n</p>\n"
+module.exports = "<p>\r\n  attrs works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -548,7 +548,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  categories works!\n</p>\n"
+module.exports = "<p>\r\n  categories works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -611,7 +611,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  customers works!\n</p>\n"
+module.exports = "<p>\r\n  customers works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -749,7 +749,11 @@ module.exports = "h1{\r\n  margin-top:28px;\r\n}\r\n\r\n/*# sourceMappingURL=dat
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "\n<ng-template [ngIf]=\"!action\"><h1>Lista</h1>\n</ng-template>\n<ng-template [ngIf]=\"action =='edit'\"><h1>edit</h1>\n</ng-template>\n<ng-template [ngIf]=\"action =='add'\">\n  <div class=\"row-fluid offset-md-1\">\n    <div class=\"col-md-12 \">\n        <h1>{{title}}</h1>\n    </div>\n  </div>\n  <div class=\"row-fluid offset-md-1\">\n    <div class=\"col-md-8\">\n    <form>\n  <fieldset>\n    <legend>Detalhes</legend>\n    <div class=\"form-group\">\n      <label for=\"nome\">Nome</label>\n      <input type=\"text\" class=\"form-control\" id=\"nome\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleSelect1\">Categoria</label>\n      <select class=\"form-control\" id=\"exampleSelect1\">\n        <option *ngFor=\"let item of listCats\" value=\"{{item.categorycode}}\">{{item.categoryName}}</option>\n      </select>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"desc\">Descrição</label>\n      <textarea class=\"form-control\" id=\"desc\" rows=\"3\"></textarea>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"stock\">Stock</label>\n        <input class=\"form-control\" type=\"number\" value=\"50\" id=\"stock\">\n    </div>\n    <div class=\"form-group\">\n      <label class=\"control-label\">Preço</label>\n      <div class=\"form-group\">\n        <div class=\"input-group mb-3\">\n          <div class=\"input-group-prepend\">\n            <span class=\"input-group-text\">€</span>\n          </div>\n          <input type=\"text\" class=\"form-control\" aria-label=\"Amount (to the nearest dollar)\">\n          <div class=\"input-group-append\">\n            <span class=\"input-group-text\"></span>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <div class=\"input-group mb-3\">\n        <div class=\"custom-file\">\n          <input type=\"file\" class=\"custom-file-input\" id=\"inputGroupFile02\">\n          <label class=\"custom-file-label\" for=\"inputGroupFile02\">Choose file</label>\n        </div>\n        <div class=\"input-group-append\">\n          <span class=\"input-group-text\" id=\"\">Upload</span>\n        </div>\n      </div>\n    </div>\n    </fieldset>\n    <fieldset class=\"form-group\">\n      <legend>Adicionar Atributos</legend>\n      <div class=\"form-group row\">\n        <div class=\"col-sm-5\">\n          <label for=\"attrVal\" >Tipo</label>\n          <select ng-model=\"searchiD\" class=\"custom-select\">\n            <option selected>Selecionar</option>\n            <option *ngFor=\"let item of listAttrs\" value=\"{{item._id}}\">{{item.attributo}}</option>\n          </select>\n        </div>\n        <div class=\"col-sm-5\">\n          <label for=\"attrVal\">Valor</label>\n          <select disabled class=\"custom-select\">\n            <option selected>Selecionar</option>\n            <!--<option  ng-repeat=\"ats in listAttrs | filter: ats.searchiD\" value=\"\"></option>-->\n          </select>\n        </div>\n        <div class=\"col-sm-2 align-self-end\">\n          <button type=\"button\" class=\"btn btn-info\">+</button>\n        </div>\n      </div>\n    </fieldset>\n</form>\n  </div>\n  </div>\n</ng-template>\n"
+=======
+module.exports = "\r\n<ng-template [ngIf]=\"!action\"><h1>Lista</h1>\r\n</ng-template>\r\n<ng-template [ngIf]=\"action =='edit'\"><h1>edit</h1>\r\n</ng-template>\r\n<ng-template [ngIf]=\"action =='add'\">\r\n  <div class=\"row-fluid offset-md-1\">\r\n    <div class=\"col-md-12 \">\r\n        <h1>{{title}}</h1>\r\n    </div>\r\n  </div>\r\n  <div class=\"row-fluid offset-md-1\">\r\n    <div class=\"col-md-8\">\r\n    <form>\r\n  <fieldset>\r\n    <legend>Detalhes</legend>\r\n    <div class=\"form-group\">\r\n      <label for=\"nome\">Nome</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"nome\">\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"exampleSelect1\">Categoria</label>\r\n      <select class=\"form-control\" id=\"exampleSelect1\">\r\n        <option *ngFor=\"let item of listCats\" value=\"{{item.categorycode}}\">{{item.categoryName}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"desc\">Descrição</label>\r\n      <textarea class=\"form-control\" id=\"desc\" rows=\"3\"></textarea>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"stock\">Stock</label>\r\n        <input class=\"form-control\" type=\"number\" value=\"50\" id=\"stock\">\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\">Preço</label>\r\n      <div class=\"form-group\">\r\n        <div class=\"input-group mb-3\">\r\n          <div class=\"input-group-prepend\">\r\n            <span class=\"input-group-text\">€</span>\r\n          </div>\r\n          <input type=\"text\" class=\"form-control\" aria-label=\"Amount (to the nearest dollar)\">\r\n          <div class=\"input-group-append\">\r\n            <span class=\"input-group-text\"></span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <div class=\"input-group mb-3\">\r\n        <div class=\"custom-file\">\r\n          <input type=\"file\" class=\"custom-file-input\" id=\"inputGroupFile02\">\r\n          <label class=\"custom-file-label\" for=\"inputGroupFile02\">Choose file</label>\r\n        </div>\r\n        <div class=\"input-group-append\">\r\n          <span class=\"input-group-text\" id=\"\">Upload</span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    </fieldset>\r\n    <fieldset class=\"form-group\">\r\n      <legend>Adicionar Atributos</legend>\r\n      <div class=\"form-group row\">\r\n        <div class=\"col-sm-5\">\r\n          <label for=\"attrVal\" >Tipo</label>\r\n          <select ng-model=\"searchiD\" class=\"custom-select\">\r\n            <option selected>Selecionar</option>\r\n            <option *ngFor=\"let item of listAttrs\" value=\"{{item._id}}\">{{item.attributo}}</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n          <label for=\"attrVal\">Valor</label>\r\n          <select disabled class=\"custom-select\" ngModel=\"searchiD\">\r\n            <option selected>Selecionar</option>\r\n            <option  *ngFor=\"let ats in listAttrs | filter:searchId\" value=\"\"></option>\r\n          </select>\r\n        </div>\r\n        <div class=\"col-sm-2 align-self-end\">\r\n          <button type=\"button\" class=\"btn btn-info\">+</button>\r\n        </div>\r\n      </div>\r\n    </fieldset>\r\n</form>\r\n  </div>\r\n  </div>\r\n</ng-template>\r\n"
+>>>>>>> 64097d8844e9cb8cdbb9687e907a64b32dccef7d
 
 /***/ }),
 
@@ -867,7 +871,7 @@ module.exports = ".dropdown{\r\n  position: relative;\r\n   display: inline-bloc
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"!office;then main else elseBlock\"></div>\n<ng-template #main>\n  <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n                <a class=\"navbar-brand\" href=\"#\">Navbar</a>\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"collapse navbar-collapse\" id=\"navbarColor02\">\n                  <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item active\">\n                      <a class=\"nav-link\"  routerLink=\"/\" routerLinkActive=\"active\">Inicio<span class=\"sr-only\">(current)</span></a>\n                    </li>\n                    <li *ngFor=\"let item of menuCats\"  class=\"nav-item\">\n                      <a class=\"nav-link\" [routerLink]=\"['products',item.categorycode]\" routerLinkActive=\"active\">{{item.categoryName}}</a>\n                    </li>\n                  </ul>\n                  <form class=\"form-inline my-2 my-lg-0\">\n                    <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n                    <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\n                  </form>\n                </div>\n              </nav>\n</ng-template>\n<ng-template #elseBlock>\n    <ul class=\"nav nav-pills flex-column navOffice\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link active\" routerLink=\"/myoffice\" routerLinkActive=\"active\">Inicio</a>\n      </li>\n      <li class=\"nav-item dropdown\">\n        <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"dropdown\" aria-expanded=\"false\">Stock</a>\n         <ul class=\"dropdown-menu dropdown-menu-left\" role=\"menu\">\n            <li role=\"presentation\"><a role=\"menuitem\" class=\"dropdown-item\" routerLink=\"/myoffice/products\">Produtos</a></li>\n            <li role=\"presentation\"><a role=\"menuitem\" class=\"dropdown-item\" routerLink=\"/myoffice/categories\">Categorias</a></li>\n            <li role=\"presentation\"><a role=\"menuitem\" class=\"dropdown-item\" routerLink=\"/myoffice/attrs\">Atributos</a></li>\n        </ul>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"myoffice/customers\">Clientes</a>\n      </li>\n    </ul>\n</ng-template>\n"
+module.exports = "<div *ngIf=\"!office;then main else elseBlock\"></div>\r\n<ng-template #main>\r\n  <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n                <a class=\"navbar-brand\" href=\"#\">Navbar</a>\r\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n                  <span class=\"navbar-toggler-icon\"></span>\r\n                </button>\r\n                <div class=\"collapse navbar-collapse\" id=\"navbarColor02\">\r\n                  <ul class=\"navbar-nav mr-auto\">\r\n                    <li class=\"nav-item active\">\r\n                      <a class=\"nav-link\"  routerLink=\"/\" routerLinkActive=\"active\">Inicio<span class=\"sr-only\">(current)</span></a>\r\n                    </li>\r\n                    <li *ngFor=\"let item of menuCats\"  class=\"nav-item\">\r\n                      <a class=\"nav-link\" [routerLink]=\"['products',item.categorycode]\" routerLinkActive=\"active\">{{item.categoryName}}</a>\r\n                    </li>\r\n                  </ul>\r\n                  <form class=\"form-inline my-2 my-lg-0\">\r\n                    <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\r\n                    <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\r\n                  </form>\r\n                </div>\r\n              </nav>\r\n</ng-template>\r\n<ng-template #elseBlock>\r\n    <ul class=\"nav nav-pills flex-column navOffice\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link active\" routerLink=\"/myoffice\" routerLinkActive=\"active\">Inicio</a>\r\n      </li>\r\n      <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"dropdown\" aria-expanded=\"false\">Stock</a>\r\n         <ul class=\"dropdown-menu dropdown-menu-left\" role=\"menu\">\r\n            <li role=\"presentation\"><a role=\"menuitem\" class=\"dropdown-item\" routerLink=\"/myoffice/products\">Produtos</a></li>\r\n            <li role=\"presentation\"><a role=\"menuitem\" class=\"dropdown-item\" routerLink=\"/myoffice/categories\">Categorias</a></li>\r\n            <li role=\"presentation\"><a role=\"menuitem\" class=\"dropdown-item\" routerLink=\"/myoffice/attrs\">Atributos</a></li>\r\n        </ul>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"myoffice/customers\">Clientes</a>\r\n      </li>\r\n    </ul>\r\n</ng-template>\r\n"
 
 /***/ }),
 
@@ -947,7 +951,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  notfound works!\n</p>\n"
+module.exports = "<p>\r\n  notfound works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1374,7 +1378,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Projectos\vapemaniac\angular-src\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Projectos\Web\vapemaniac\angular-src\src\main.ts */"./src/main.ts");
 
 
 /***/ })

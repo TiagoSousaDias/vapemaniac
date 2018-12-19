@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, ViewChild} from '@angular/core';
 import { ProductsService} from '../../../services/products.service';
 import { CategoriesService} from '../../../services/categories.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
@@ -15,10 +15,14 @@ export class StockProductsComponent implements OnInit {
   listProducts: any;
   listCats:any;
   listAttrs:any;
+  @ViewChild('attrArea') attrArea: ElementRef;
+
   constructor(private activatedRoute: ActivatedRoute,
     private productsService:ProductsService,
     private categoriesService:CategoriesService,
-    private router:Router) {
+    private router:Router,
+    private renderer:Renderer2
+  ) {
    try{
     this.action = this.activatedRoute.firstChild.snapshot.params['action'] || '';
     this.id = this.activatedRoute.firstChild.snapshot.params['id']  || null;
@@ -59,4 +63,18 @@ export class StockProductsComponent implements OnInit {
     }
 
   }
+
+  //Eventos
+  addAttrToProd(type,val, area){
+    //alert(type + ' - ' + val);
+    let div = this.renderer.createElement('div');
+    let badge = this.renderer.createElement('span');
+    this.renderer.addClass(badge,'badge badge-primary')
+    this.renderer.createText(value);
+    this.renderer.addClass(div,'attrItem');
+    this.renderer.appendChild(div, badge);
+    this.renderer.appendChild(this.attrArea.nativeElement, div);
+
+  }
+
 }
